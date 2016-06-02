@@ -333,7 +333,7 @@ void function(){
       }
     }, false );
 
-    document.addEventListener( 'mousedown', function( event ){
+    container.addEventListener( 'mousedown', function( event ){
       mainloopOnOff = false;
       panningOnOff = true;
       panning();
