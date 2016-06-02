@@ -1,0 +1,180 @@
+#container{
+  background-image: url(images/map-2.png);
+  position: relative;
+  margin: 30px auto 0 auto;
+  overflow: hidden;
+  color: #8f7001;
+}
+
+#container .target1{
+  width: 100%;
+  height: 100%;
+  background: url(images/target.png) no-repeat;
+  background-size: 100%;
+  z-index: 6;
+  position: absolute;
+}
+
+#container .container1{
+  width: 100%;
+  height: 100%;
+  background-image: url(images/start.png); 
+  background-size: 100%;
+  z-index: 6;
+  position: relative;
+  transition: all 0.2s ease-in 0.2s;
+}
+
+#container .messages{
+  width: 100%;
+  height: 17%;
+  background: url(images/message.png) repeat-x;
+  font-size: 24px;
+  float: left;
+}
+
+#container .messages-left{
+  width: 40%;
+  height: 100%;
+  float: left;
+  margin-left: 2%;
+}
+
+.messages-left .money-sum,
+.messages-left .target-money,
+.messages-right .countdown,
+.messages-right .level-count{
+  color: #ff7809;
+}
+
+#container .people,
+#container .people1{
+  width: 17.03%;
+  height: 11.74%;
+  z-index: 0;
+  position: absolute;
+  top: 2.5%;
+  left: 42%;
+}
+
+#container .people{
+  background: url(images/people.png) no-repeat;
+  background-size: 100%;
+}
+
+#container .people1{
+  background: url(images/people-1.png) no-repeat;
+  background-size: 100%;
+}
+
+#container .map{
+  width: 100%;
+  height: 83.1%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.container1 .glowed{
+  position: absolute;
+  width: 17%;
+  height: 13%;
+  top: 23%;
+  left: 12%;
+}
+
+.container1 .glowed:hover{
+  box-shadow: 80px 80px 580px 20px #C8B109;
+  background-color: rgba(254, 247, 60, 0.01);
+}
+
+.container2 .gold{
+  position: absolute;
+  z-index: 1;
+}
+
+.container2 .hook{
+  position: absolute;
+  transform-origin: 50% 0;
+}
+
+.container2 .hook1{
+  position: absolute;
+  top: 0;
+  z-index: 4;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.container2 .hook3{
+  position: absolute;
+  top: 0;
+  z-index: 6;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.container2 .hook3:before{
+  content: '';
+  width: 500px;
+  height: 2px;
+  display: block;
+  background-color: #000;
+  left: 11.5px;
+  top: 5px;
+  position: absolute;
+  transform-origin: 0;
+  transform:  rotate(-90deg); 
+}
+
+.container2 .goldL,
+.container2 .goldM,
+.container2 .ironoreL,
+.container2 .ironoreS{
+  position: absolute;
+  z-index: 4;
+  display: none;
+}
+
+.messages-left .money,
+.messages-left .targermoney,
+.messages-right .time,
+.messages-right .levenl{
+  height: 42.86%;
+  line-height: 142.86%;
+}
+
+#container .messages-right{
+  width: 27.2%;
+  height: 100%;
+  float: right;
+}
+
+.messages-right .exit{
+  float: left;
+  width: 37.8%;
+  height: 59.52%;
+  margin: 4.28% 9.73% 7.28% 0;
+  text-align: center;
+  box-shadow: 2px 2px 10px #fef73c inset;
+  padding: 2px;
+  border-radius: 10px;
+  opacity: .8;
+}
+
+.messages-right .exit:hover{
+  background-color: #FDEC39;
+  opacity: 1;
+}
+
+#container .container2{
+  width: 100%;
+  height: 87.85%;
+  position: absolute;
+  top: 12.15%;
+  left: 0;
+  overflow: hidden;
+  z-index: 4;
+}
+
+
