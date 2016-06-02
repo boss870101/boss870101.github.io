@@ -333,11 +333,13 @@ void function(){
       }
     }, false );
 
-    container.addEventListener( 'mousedown', function( event ){
-      mainloopOnOff = false;
-      panningOnOff = true;
-      panning();
-      peoplechange( 6 );
+    document.addEventListener( 'mousedown', function( event ){
+      if( mainloopOnOff ){
+        mainloopOnOff = false;
+        panningOnOff = true;
+        panning();
+        peoplechange( 6 );
+      }
     }, false );
   };
 }();
