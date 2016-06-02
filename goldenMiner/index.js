@@ -166,9 +166,9 @@ void function(){
 
         if( s == -1 )
           clearTimeout( t )
-       }
+      };
       times();
-    }
+    };
 
     var render = function(){
       for( var i in hookthing ){
@@ -331,7 +331,13 @@ void function(){
             return;
         }
       }
-      
+    }, false );
+
+    document.addEventListener( 'mousedown', function( event ){
+      mainloopOnOff = false;
+      panningOnOff = true;
+      panning();
+      peoplechange( 6 );
     }, false );
   };
 }();
