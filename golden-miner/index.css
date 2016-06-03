@@ -1,9 +1,10 @@
 #container{
-  background-image: url(images/map-2.png);
+  background-image: url(images/map-3.png);
   position: relative;
   margin: 30px auto 0 auto;
   overflow: hidden;
   color: #8f7001;
+  background-repeat: round;
 }
 
 #container .target1{
@@ -67,14 +68,6 @@
   background-size: 100%;
 }
 
-#container .map{
-  width: 100%;
-  height: 83.1%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
 .container1 .glowed{
   position: absolute;
   width: 17%;
@@ -84,29 +77,28 @@
 }
 
 .container1 .glowed:hover{
-  box-shadow: 80px 80px 580px 20px #C8B109;
+  box-shadow: 0px 0px 300px 20px #C8B109;
   background-color: rgba(254, 247, 60, 0.01);
 }
 
-.container2 .gold{
+.gameMap .gold{
   position: absolute;
   z-index: 1;
 }
 
-.container2 .hook{
+.gameMap .hook{
   position: absolute;
   transform-origin: 50% 0;
 }
 
-.container2 .hook1{
+.gameMap .hook1{
   position: absolute;
-  top: 0;
   z-index: 4;
   background-size: 100%;
   background-repeat: no-repeat;
 }
 
-.container2 .hook3{
+.gameMap .hook3{
   position: absolute;
   top: 0;
   z-index: 6;
@@ -114,7 +106,7 @@
   background-size: 100%;
 }
 
-.container2 .hook3:before{
+.gameMap .hook3:before{
   content: '';
   width: 500px;
   height: 2px;
@@ -127,10 +119,10 @@
   transform:  rotate(-90deg); 
 }
 
-.container2 .goldL,
-.container2 .goldM,
-.container2 .ironoreL,
-.container2 .ironoreS{
+.gameMap .goldL,
+.gameMap .goldM,
+.gameMap .ironoreL,
+.gameMap .ironoreS{
   position: absolute;
   z-index: 4;
   display: none;
@@ -167,7 +159,7 @@
   opacity: 1;
 }
 
-#container .container2{
+#container .gameMap{
   width: 100%;
   height: 87.85%;
   position: absolute;

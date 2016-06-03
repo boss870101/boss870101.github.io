@@ -202,7 +202,7 @@ void function(){
       render();
 
       if( on ){
-        config.angle += 1.5;
+        config.angle += 1;
         currentAngle = config.angle
         speed = 4
         if( config.angle >= 150 ){
@@ -212,7 +212,7 @@ void function(){
       }
     
       if( off ){
-        config.angle -= 1.5;
+        config.angle -= 1;
         currentAngle = config.angle
 
         if( config.angle <= 25 ){
@@ -333,7 +333,7 @@ void function(){
       }
     }, false );
 
-    container.addEventListener( 'mousedown', function( event ){
+    document.addEventListener( 'mousedown', function( event ){
       if( mainloopOnOff ){
         mainloopOnOff = false;
         panningOnOff = true;
