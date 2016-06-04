@@ -43,16 +43,12 @@ void function(){
   };
 
   var angleDir = 1.2;
-  var mainloopOnOff = true;
   var originY = 0; 
   var originX = config.containerWidth/2 - config.hook/2;
   var currentAngle = config.angle;
   var speed = 4;
   var direction = 0;
   var hookAngleOffset = -90;
-  var directionOn = true;
-  var directionOff = false;
-  var panningOnOff = false;
   var sum = 0,levelCount = 1;
   var targetMoneySum = 650;
   var s = 61,stop;
@@ -153,7 +149,7 @@ void function(){
       var times = function(){
         s --;
         clearTimeout( t )
-        t = setTimeout( times,500 )
+        t = setTimeout( times, 400 )
         s % 2 == 0 ? people.className = 'people' : people.className = 'people1';
 
         if( s == -1 )
@@ -247,26 +243,20 @@ void function(){
       if( code != 40 )
         return;
 
-      if( mainloopOnOff ){
-        switch( code ){
-          case 40:
-            mainloops.splice( 0,1, panning );
-            peoplechange( 15 );
-            break;
+      switch( code ){
+        case 40:
+          mainloops.splice( 0,1, panning );
+          peoplechange( 30 );
+          break;
 
-          default:
-            return;
-        }
+        default:
+          return;
       }
     }, false );
 
     document.addEventListener( 'mousedown', function( event ){
-      if( mainloopOnOff ){
-        mainloopOnOff = false;
-        panningOnOff = true;
-        panning();
-        peoplechange( 16 );
-      }
+      panning();
+      peoplechange( 30 );
     }, false );
   };
 }();
