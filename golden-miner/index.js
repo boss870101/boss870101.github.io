@@ -255,7 +255,7 @@ void function(){
     }, false );
 
     document.addEventListener( 'mousedown', function( event ){
-      panning();
+      mainloops.splice( 0,1, panning );
       peoplechange( 30 );
     }, false );
   };
