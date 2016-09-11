@@ -1,0 +1,55 @@
+{
+  "desktops": [ [ 
+    { "title": "微信", "pic": "./images/weixin.png" },
+    { "title": "高德地图", "pic": "./images/gaode.png" },
+    { "title": "冰雪奇缘", "pic": "./images/bingxueqiyan.png" },
+    { "title": "设置", "pic": "./images/settings.png" },
+    { "title": "大众点评", "pic": "./images/dazhongdianping.png" },
+    { "title": "豆瓣", "pic": "./images/douban.png" },
+    { "title": "淘宝", "pic": "./images/taobao.png" },
+    { "title": "UC浏览器", "pic": "./images/uc.png" },
+    { "title": "有道词典", "pic": "./images/youdao.png" },
+    { "title": "支付宝", "pic": "./images/zhifubao.png" },
+    { "title": "星盘", "pic": "./images/xingpan.png" },
+    { "title": "smule", "pic": "./images/smule.png" },
+    { "title": "相片", "pic": "./images/photos.png" },
+    { "title": "提醒事项", "pic": "./images/reminders.png" },
+    { "title": "网易新闻", "pic": "./images/wangyinew.png" },
+    { "title": "网易音乐", "pic": "./images/wangyiyun.png" },
+    { "title": "查找", "pic": "./images/find.png" }
+  ],
+  [ 
+    { "title": "微信", "pic": "./images/weixin.png" },
+    { "title": "QQ", "pic": "./images/qq.png" },
+    { "title": "冰雪奇缘", "pic": "./images/bingxueqiyan.png" },
+    { "title": "设置", "pic": "./images/settings.png" },
+    { "title": "大众点评", "pic": "./images/dazhongdianping.png" },
+    { "title": "豆瓣", "pic": "./images/douban.png" }
+  ],[
+    { "title": "淘宝", "pic": "./images/taobao.png" },
+    { "title": "UC浏览器", "pic": "./images/uc.png" },
+    { "title": "有道词典", "pic": "./images/youdao.png" },
+    { "title": "支付宝", "pic": "./images/zhifubao.png" },
+    { "title": "星盘", "pic": "./images/xingpan.png" },
+    { "title": "smule", "pic": "./images/smule.png" },
+    { "title": "相片", "pic": "./images/photos.png" },
+    { "title": "提醒事项", "pic": "./images/reminders.png" },
+    { "title": "网易新闻", "pic": "./images/wangyinew.png" },
+    { "title": "网易音乐", "pic": "./images/wangyiyun.png" },
+    { "title": "查找", "pic": "./images/find.png" }
+  ],[
+    { "title": "ICloud", "pic": "./images/icloud.png" },
+    { "title": "爱奇艺", "pic": "./images/iqiyi.png" },
+    { "title": "邮箱", "pic": "./images/mail.png" },
+    { "title": "美颜相机", "pic": "./images/meiyanxiangji.png" },
+    { "title": "备忘录", "pic": "./images/notes.png" },
+    { "title": "新浪", "pic": "./images/sina.png" }
+  ] ],
+  "dock": [ 
+    { "title": "电话", "pic": "./images/call.png" },
+    { "title": "通信录", "pic": "./images/contacts.png" },
+    { "title": "UC浏览器", "pic": "./images/uc.png" },
+    { "title": "QQ", "pic": "./images/qq.png" },
+    { "title": "多米音乐", "pic": "./images/duomi.png" }
+  ]
+}

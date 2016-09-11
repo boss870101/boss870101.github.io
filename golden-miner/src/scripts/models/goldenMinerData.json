@@ -1,0 +1,15 @@
+{
+  "objects": [
+    { "type": "ironoreS", "pos": [ 100, 180 ], "width": 37, "height": 30, "weight": 2.5, "money": 20, "url": "url(images/ironoreS.png)" },
+    { "type": "ironoreS", "pos": [ 250, 200 ], "width": 37, "height": 30, "weight": 2.5, "money": 20, "url": "url(images/ironoreS.png)" },
+    { "type": "ironoreS", "pos": [ 300, 240 ], "width": 37, "height": 30, "weight": 2.5, "money": 20, "url": "url(images/ironoreS.png)" },
+    { "type": "ironoreL", "pos": [ 150, 170 ], "width": 56, "height": 50, "weight": 5, "money": 50, "url": "url(images/ironoreL.png)" },
+    { "type": "ironoreL", "pos": [ 330, 220 ], "width": 56, "height": 50, "weight": 5, "money": 50, "url": "url(images/ironoreL.png)" },
+    { "type": "ironoreL", "pos": [ 450, 300 ], "width": 56, "height": 50, "weight": 5, "money": 50, "url": "url(images/ironoreL.png)" },
+    { "type": "goldM", "pos": [ 70, 130 ], "width": 38, "height": 34, "weight": 2.5, "money": 200, "url": "url(images/goldM.png)" },
+    { "type": "goldM", "pos": [ 500, 280 ], "width": 38, "height": 34, "weight": 2.5, "money": 200, "url": "url(images/goldM.png)" },
+    { "type": "goldM", "pos": [ 300, 280 ], "width": 38, "height": 34, "weight": 2.5, "money": 200, "url": "url(images/goldM.png)" },
+    { "type": "goldL", "pos": [ 550, 320 ], "width": 68, "height": 64, "weight": 5, "money": 500, "url": "url(images/goldL.png)" },
+    { "type": "goldL", "pos": [ 120, 350 ], "width": 68, "height": 64, "weight": 5, "money": 500, "url": "url(images/goldL.png)" }
+  ]
+}

@@ -1,0 +1,46 @@
+#container {
+  position: absolute;
+  z-index: 200;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #DF1614;
+  position: relative;
+  overflow: hidden;
+}
+
+#container-image {
+  display: block;
+  width: 600px;
+  height: 600px;
+  position: relative;
+  margin: auto;
+}
+
+#image {
+  width: 600px;
+  height: 600px;
+  background-image: url(images/1.jpg);
+}
+
+.selection {
+  background-image: url(images/1.jpg);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.lens {
+  width: 600px;
+  height: 600px;
+  background-color: #657364;
+  opacity: .8;
+}
+
+.cancel:hover,
+.definite:hover {
+  background-color: #7281F7;
+  color: #fff;
+}

@@ -1,4 +1,4 @@
-#container {
+#container{
   background-image: url(images/map-3.png);
   position: relative;
   margin: 30px auto 0 auto;
@@ -7,7 +7,7 @@
   background-repeat: round;
 }
 
-#container .goal {
+#container .goal{
   width: 100%;
   height: 100%;
   background: url(images/target.png) no-repeat;
@@ -16,17 +16,17 @@
   position: absolute;
 }
 
-#container .container1 {
+#container .container1{
   width: 100%;
   height: 100%;
-  background-image: url(images/start.png);
+  background-image: url(images/start.png); 
   background-size: 100%;
   z-index: 6;
   position: relative;
   transition: all 0.2s ease-in 0.2s;
 }
 
-#container .messages {
+#container .messages{
   width: 100%;
   height: 17%;
   background: url(images/message.png) repeat-x;
@@ -34,7 +34,7 @@
   float: left;
 }
 
-#container .messages-left {
+#container .messages-left{
   width: 40%;
   height: 100%;
   float: left;
@@ -44,12 +44,12 @@
 .messages-left .money-sum,
 .messages-left .target-money,
 .messages-right .countdown,
-.messages-right .level-count {
+.messages-right .level-count{
   color: #ff7809;
 }
 
 #container .people,
-#container .people1 {
+#container .people1{
   width: 17.03%;
   height: 11.74%;
   z-index: 0;
@@ -58,17 +58,17 @@
   left: 42%;
 }
 
-#container .people {
+#container .people{
   background: url(images/people.png) no-repeat;
   background-size: 100%;
 }
 
-#container .people1 {
+#container .people1{
   background: url(images/people-1.png) no-repeat;
   background-size: 100%;
 }
 
-.container1 .glowed {
+.container1 .glowed{
   position: absolute;
   width: 17%;
   height: 13%;
@@ -76,29 +76,29 @@
   left: 12%;
 }
 
-.container1 .glowed:hover {
+.container1 .glowed:hover{
   box-shadow: 0px 0px 300px 20px #C8B109;
   background-color: rgba(254, 247, 60, 0.01);
 }
 
-.gameMap .gold {
+.gameMap .gold{
   position: absolute;
   z-index: 1;
 }
 
-.gameMap .hook {
+.gameMap .hook{
   position: absolute;
   transform-origin: 50% 0;
 }
 
-.gameMap .hook1 {
+.gameMap .hook1{
   position: absolute;
   z-index: 4;
   background-size: 100%;
   background-repeat: no-repeat;
 }
 
-.gameMap .hook3 {
+.gameMap .hook3{
   position: absolute;
   top: 0;
   z-index: 6;
@@ -106,7 +106,7 @@
   background-size: 100%;
 }
 
-.gameMap .hook3:before {
+.gameMap .hook3:before{
   content: '';
   width: 500px;
   height: 2px;
@@ -116,13 +116,13 @@
   top: 5px;
   position: absolute;
   transform-origin: 0;
-  transform: rotate(-90deg);
+  transform:  rotate(-90deg); 
 }
 
 .gameMap .goldL,
 .gameMap .goldM,
 .gameMap .ironoreL,
-.gameMap .ironoreS {
+.gameMap .ironoreS{
   position: absolute;
   z-index: 4;
   display: none;
@@ -131,18 +131,18 @@
 .messages-left .money,
 .messages-left .targermoney,
 .messages-right .time,
-.messages-right .levenl {
+.messages-right .levenl{
   height: 42.86%;
   line-height: 142.86%;
 }
 
-#container .messages-right {
+#container .messages-right{
   width: 27.2%;
   height: 100%;
   float: right;
 }
 
-.messages-right .exit {
+.messages-right .exit{
   float: left;
   width: 37.8%;
   height: 59.52%;
@@ -154,12 +154,12 @@
   opacity: .8;
 }
 
-.messages-right .exit:hover {
+.messages-right .exit:hover{
   background-color: #FDEC39;
   opacity: 1;
 }
 
-#container .gameMap {
+#container .gameMap{
   width: 100%;
   height: 87.85%;
   position: absolute;
@@ -168,3 +168,5 @@
   overflow: hidden;
   z-index: 4;
 }
+
+

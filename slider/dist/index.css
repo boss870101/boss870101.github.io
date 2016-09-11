@@ -1,0 +1,38 @@
+#container {
+  width: 600px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#slide > .item {
+  width: 600px;
+  height: 400px;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: all 0.5s ease .2s;
+}
+
+#container .prve,
+#container .next {
+  text-decoration: none;
+  font-size: 60px;
+  position: absolute;
+  display: block;
+  top: 170px;
+  opacity: .5;
+}
+
+#container .prve:hover,
+#container .next:hover {
+  opacity: 1;
+  color: #E03D49;
+}
+
+#container .prve {
+  left: -45px;
+}
+
+#container .next {
+  left: 608px;
+}

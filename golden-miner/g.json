@@ -1,0 +1,55 @@
+{
+  "rules": [
+    /**
+     * example 1: Browserify src/index.js to dist/bundle.js
+     */
+    
+    {
+      "watch": "./src/**/*.@(json|js|tpl)",
+      "src": "./src/index.js",
+      "dist": "./dist/bundle.js",
+      "compiler": "browserify"
+    },
+
+    /**
+     * example 2: Sass src/*.scss to dist/*.css
+     */
+    
+    {
+      "src": "./src/*.scss",
+      "dist": "./dist/{basename}.css", // variable can be 'dirname', 'parentname', 'basename' and 'extname'.
+      "compiler": "sass"
+    },
+
+    /**
+     * example 3: Copy specified files
+     *
+     * if watch no specified, it equal to src.
+     * if compiler no specified, it defaults to 'copy'.
+     */
+    
+    {
+      "src": "./src/@(*.html|*.css|*.json)",
+      "dist": "./dist/{basename}{extname}"
+    },
+
+    {
+      "src": "./src/css/@(*.css)",
+      "dist": "./dist/css/{basename}{extname}"
+    },
+
+    {
+      "src": "./src/@(images)/@(*.*)",
+      "dist": "./dist/{parentname}/{basename}{extname}"
+    }
+  ],
+
+  // dist path, for 'clean'
+  "distPath": "./dist",
+
+  // open url on browser
+  "demoUrlPath": "/dist/index.html",
+
+  // enable notify
+  "notify": true
+}
