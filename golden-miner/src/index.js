@@ -214,7 +214,7 @@ void function(){
       }
     }, false );
 
-    document.addEventListener( 'mousedown', function( event ){
+    document.addEventListener( 'touchstart', function( event ){
       mainloops.splice( 0,1, panning );
       peoplechange( 30 );
     }, false );
