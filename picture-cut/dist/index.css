@@ -22,11 +22,11 @@
 #image {
   width: 600px;
   height: 600px;
-  background-image: url(images/1.jpg);
+  background-image: url(images/pic.jpg);
 }
 
 .selection {
-  background-image: url(images/1.jpg);
+  background-image: url(images/pic.jpg);
   position: absolute;
   left: 0px;
   top: 0px;
