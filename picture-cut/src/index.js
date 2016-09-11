@@ -10,7 +10,7 @@ function pictureCut( image ){
   var model = {
     pos: [ 0, 0 ],
     size: [ 300, 300 ],
-    pic: 'images/1.jpg'
+    pic: 'images/pic.jpg'
   }
 
   var config = {
