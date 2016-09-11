@@ -48,7 +48,7 @@
   "distPath": "./dist",
 
   // open url on browser
-  "demoUrlPath": "/dist/index.html",
+  "demoUrlPath": "/dist/",
 
   // enable notify
   "notify": true
