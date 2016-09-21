@@ -1,8 +1,9 @@
-var eventHelps = require( './eventHelps' );
-var distance = require( './distance' );
+
+import { distance } from './distance';
+import {eventHelps} from './eventHelps'; 
 
 var currentPosition,movingPosition;
-var drag = module.exports = function( event, move ){
+export function drag( event, move ){
   currentPosition = [
     event.clientX,
     event.clientY

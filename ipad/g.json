@@ -1,14 +1,26 @@
 {
+  // specify path of input.
+  "srcBase": "./src/",
+
+  // specify path of output.
+  "distBase": "./dist/",
+
+  // open url on browser
+  "demoUrlPath": "/dist/",
+
+  // enable notify
+  "notify": true,
+
   "rules": [
     /**
-     * example 1: Browserify src/index.js to dist/bundle.js
+     * example 1: Webpack src/index.js to dist/bundle.js
      */
     
     {
-      "watch": "./src/**/*.@(json|js|tpl)",
-      "src": "./src/index.js",
-      "dist": "./dist/bundle.js",
-      "compiler": "browserify"
+      "watch": "**/*.@(json|js|tpl)",
+      "src": "index.js",
+      "dist": "bundle.js",
+      "compiler": "webpack"
     },
 
     /**
@@ -16,8 +28,9 @@
      */
     
     {
-      "src": "./src/*.scss",
-      "dist": "./dist/{basename}.css", // variable can be 'dirname', 'parentname', 'basename' and 'extname'.
+      "watch": "**/*.scss",
+      "src": "*.scss",
+      "dist": "{basename}.css", // variable can be 'dirname', 'parentname', 'basename' and 'extname'.
       "compiler": "sass"
     },
 
@@ -29,27 +42,21 @@
      */
     
     {
-      "src": "./src/@(*.html|*.css|*.json)",
-      "dist": "./dist/{basename}{extname}"
+      "watch": "@(**/*.html|*.css|*.json)",
+      "src": "@(*.html|*.css|*.json)",
+      "dist": "{basename}{extname}"
     },
 
     {
-      "src": "./src/css/@(*.css)",
-      "dist": "./dist/css/{basename}{extname}"
+      "watch": "css/@(**/*.css)",
+      "src": "css/@(*.css)",
+      "dist": "css/{basename}{extname}"
     },
 
     {
-      "src": "./src/@(images)/@(*.*)",
-      "dist": "./dist/{parentname}/{basename}{extname}"
+      "watch": "@(images)/@(*.*)",
+      "src": "@(images)/@(*.*)",
+      "dist": "{parentname}/{basename}{extname}"
     }
-  ],
-
-  // dist path, for 'clean'
-  "distPath": "./dist",
-
-  // open url on browser
-  "demoUrlPath": "/dist/index.html",
-
-  // enable notify
-  "notify": true
+  ]
 }

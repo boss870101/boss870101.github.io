@@ -1,5 +1,5 @@
-var eventHelps = module.exports = {
-  on: function( element, type, fn ){
+export var eventHelps = {
+    on: function( element, type, fn ){
     if( element.addEventListener ){
       element.addEventListener( type, fn, false );
     }else if( element.attachEvent ){
@@ -8,7 +8,7 @@ var eventHelps = module.exports = {
       element[ 'on' + type ] = fn;
     }
   },  
-  off: function( element, type, fn ){
+    off: function( element, type, fn ){
     if( element.removeEventListener ){
       element.removeEventListener( type, fn, false )
     }else if( element.detachEvent ){
