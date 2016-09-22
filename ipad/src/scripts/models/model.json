@@ -13,20 +13,7 @@
     { "title": "星盘", "pic": "./images/xingpan.png" },
     { "title": "smule", "pic": "./images/smule.png" },
     { "title": "相片", "pic": "./images/photos.png" },
-    { "title": "提醒事项", "pic": "./images/reminders.png" },
-    { "title": "网易新闻这是这是这晕是", "pic": "./images/wangyinew.png" },
-    { "title": "网易音乐", "pic": "./images/wangyiyun.png" },
-    { "title": "查找", "pic": "./images/find.png" },
-    { "title": "星盘", "pic": "./images/xingpan.png" },
-    { "title": "smule", "pic": "./images/smule.png" },
-    { "title": "相片", "pic": "./images/photos.png" },
-    { "title": "提醒事项", "pic": "./images/reminders.png" },
-    { "title": "网易新闻这是这是这晕是", "pic": "./images/wangyinew.png" },
-    { "title": "网易音乐", "pic": "./images/wangyiyun.png" },
-    { "title": "查找", "pic": "./images/find.png" },
-    { "title": "星盘", "pic": "./images/xingpan.png" },
-    { "title": "smule", "pic": "./images/smule.png" },
-    { "title": "相片", "pic": "./images/photos.png" }
+    { "title": "提醒事项", "pic": "./images/reminders.png" }
   ],
   [ 
     { "title": "微信", "pic": "./images/weixin.png" },

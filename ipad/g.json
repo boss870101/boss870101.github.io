@@ -42,7 +42,7 @@
      */
     
     {
-      "watch": "@(**/*.html|*.css|*.json)",
+      "watch": "@(*.html|*.css|*.json)",
       "src": "@(*.html|*.css|*.json)",
       "dist": "{basename}{extname}"
     },
