@@ -5,7 +5,7 @@ opus.innerHTML = writingModel.map( function( item ){
   return [
     '<li>',
       '<a href=' + item.url + '>',
-        '<img src=' + item.pic + ' width=' + item.size[ 0 ] + ' height=' + item.size[1] + '>',
+        '<img src=' + item.pic + '>',
         '<h3>' + item.title + '</h3></a>',
     '</li>'  
   ].join('');

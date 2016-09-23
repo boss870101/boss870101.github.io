@@ -118,5 +118,19 @@
 
 #opus li{
   display: inline-block;
-  margin: 20px 20px 20px 0;
+  margin: 8px 15px 15px 0;
+
+  &:nth-child( 3 ){
+    margin-right: 0px;
+  }
+
+  & a img{
+    width: 162px;
+    height: 162px; 
+  }
+
+  & a h3{
+    margin-top: 8px; 
+  }
+
 }

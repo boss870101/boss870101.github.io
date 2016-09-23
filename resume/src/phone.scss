@@ -1,6 +1,15 @@
+html{
+  font-size: 16px;
+}
 #container{
   width: 100%;
   position: relative;
+  border-top: 10px solid #F78F0F;
+  border-bottom: 10px solid #F78F0F;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+
 
   a{
     color: #2C3BF7;
@@ -30,19 +39,19 @@
   }
 
   .left{
-    width: 300px;
-    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
     position: relative;
 
     .photo-box{
-      width: 100%;
-      height: 150px;
+      width: 9.37rem;
+      height: 9.37rem;
       position: relative;
+      margin: 20px auto;
 
       .photo{
-        width: 120px;
-        height: 120px;
-        padding: 2px;
+        width: 100%;
+        height: 100%;
         border: 2px solid #bbc2c3;
         background-color: #fefef8;
         border-radius: 50%;
@@ -65,9 +74,13 @@
     }
 
     ul{
+      width: 70%;
       height: 240px;
+      list-style: none;
+
 
       li{
+        width: 100%;
         height: 30px;
         padding: 8px 0;
       }
@@ -84,15 +97,21 @@
       }
     }
 
-    .self-assessment{
-      
+    .tow-dimension{
+      width: 120px;
+      height: 120px;
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 200px;
     }
 
   }
 
   .right{
-    width: 300px;
+    width: 100%;
     margin: 0 auto;
+    float: both;
 
     header{
       display: none;
@@ -103,8 +122,22 @@
     }
   }
 }
+  #opus{
+    width: 100%;
+  }
 
-#opus li{
-  display: inline-block;
-  margin: 0 0 10px 0;
-}
+  #opus>li{
+    width: 40%;
+    height: 40%;
+    display: inline-block;
+    margin: 0 0 10px 0;
+    &>a>img{
+      width: 100%;
+      height: 100%;
+      margin-bottom: 8px; 
+    }
+    &:nth-child(2n+1){
+      margin-right: 10px;
+    }
+  }
+

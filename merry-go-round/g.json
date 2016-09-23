@@ -42,19 +42,19 @@
      */
     
     {
-      "watch": "**/@(*.html|*.css|*.json)",
+      "watch": "@(*.html|*.css|*.json)",
       "src": "@(*.html|*.css|*.json)",
       "dist": "{basename}{extname}"
     },
 
     {
-      "watch": "**/css/@(*.css)",
+      "watch": "css/@(**/*.css)",
       "src": "css/@(*.css)",
       "dist": "css/{basename}{extname}"
     },
 
     {
-      "watch": "**/@(images)/@(*.*)",
+      "watch": "@(images)/@(*.*)",
       "src": "@(images)/@(*.*)",
       "dist": "{parentname}/{basename}{extname}"
     }

@@ -1,7 +1,7 @@
-window.onload = function(){
-  var mapping = require( './scripts/libs/mapping' );
-  var row = 18;
-  var col = 30;
+  import {mapping} from './scripts/libs/mapping';
+  import {backEaseInOut} from './scripts/libs/backEaseInOut';
+  var row = 15;
+  var col = 25;
   var size = 32;
   var map = document.getElementById( 'map' );
   var snake = [ [ 3, 0 ], [ 2, 0 ], [ 1, 0 ] ];
@@ -9,7 +9,7 @@ window.onload = function(){
   var headx,heady,food,dir;
   var foodpos = [ 5, 5 ];
   var grow = false;
-  var speed = 100;
+  var speed = 200;
   var sum = 0;
   var directions = mapping( [ 'name', 'keyCode', 'xOffset', 'yOffset', 'reverse','horver','xyOffset' ], [
     [ 'up', 38, 0, -1, 'down', 'ver', '0,-1' ],
@@ -17,7 +17,7 @@ window.onload = function(){
     [ 'left', 37, -1, 0, 'right', 'hor', '-1,0' ],
     [ 'right', 39, 1, 0, 'left', 'hor', '1,0' ]
   ] );
-  var start = document.getElementsByTagName( 'start' )[0];
+
   var start = document.querySelector( '.start' );
   var over = document.querySelector( '.over' );
   var reset = document.querySelector( 'input' );
@@ -32,17 +32,14 @@ window.onload = function(){
   var startMove = true;
   var downTime = 0, overTime = 0;
   var totalTime = Math.sqrt( 1000 * 2/0.001 );
-  var startY = 120, currentStartY = -350, targetStartY = 520; 
+  var startY = 120, currentStartY = -350, targetStartY = 520;
+  var mapSize = [ col * size, row * size ];
+  var startSize = [ start.offsetWidth, start.offsetHeight ];
+  
+  start.style.left = ( mapSize[ 0 ] - startSize[ 0 ] ) / 2 + 'px';
+  over.style.left = ( mapSize[ 0 ] - startSize[ 0 ] ) / 2 + 'px';
 
-  var backEaseInOut = function(index, offset, target, framesNum, s){
-      if(s == undefined)
-        s = 1.70158;
-      if((index /= framesNum / 2) < 1)
-        return target / 2 * (index * index * (((s *= (1.525)) + 1) * index - s)) + offset;
-      else
-        return target / 2 * ((index -= 2) * index * (((s *= (1.525)) + 1) * index + s) + 2) + offset;
-  };
-
+  document.body.parentNode.style.overflow="hidden";
   var gameStart = function(){
     var nowTime = new Date().getTime();
 
@@ -63,7 +60,7 @@ window.onload = function(){
   };
 
   
-  map.style.cssText = 'width: ' + ( col * size ) + 'px; height: ' + ( row * size ) + 'px;';
+  map.style.cssText = 'width:' + mapSize[ 0 ] + 'px; height:' + mapSize[ 1 ] + 'px;';
 
   var getDirection = function( block, targetBlock ){
     return namesetFromXYOffset( [ targetBlock[ 0 ] - block[ 0 ], targetBlock[ 1 ] - block[ 1 ] ].join(',') );
@@ -137,7 +134,7 @@ window.onload = function(){
 
     if( headx == foodpos[ 0 ] && heady == foodpos[ 1 ] ){
       var allSnakePos = {};
-      var allFoodPos = [];
+      var allFoodPos = [],temp;
       grow = true;
       sum ++;  
       span.innerHTML = sum + '个';
@@ -238,4 +235,3 @@ window.onload = function(){
     if( dir )
       targetDir = dir;
   }, false );
-};
