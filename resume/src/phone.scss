@@ -139,5 +139,12 @@ html{
     &:nth-child(2n+1){
       margin-right: 10px;
     }
+
+    & a:hover{
+      img{
+        outline: 3px solid red;
+      }
+    }
+
   }
 

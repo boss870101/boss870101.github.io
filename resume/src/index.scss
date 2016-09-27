@@ -133,4 +133,11 @@
     margin-top: 8px; 
   }
 
+  & a:hover{
+    img{
+      outline: 3px solid red;
+    }
+  }
+
+
 }
