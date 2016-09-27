@@ -1,4 +1,4 @@
-export function mapping( fields, records ){
+export var mapping = function( fields, records ){
   return function( fieldName, fromFieldName ){
     var index,fromIndex,map;
 

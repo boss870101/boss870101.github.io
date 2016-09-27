@@ -1,4 +1,4 @@
-var HTML = require( 'html' );
+import { HTML } from "./scripts/libs/html.js";
 
 function pictureCut( image ){
   var imageBoxWidth = image.parentNode.offsetWidth;
@@ -259,7 +259,6 @@ function pictureCut( image ){
 
   render();
   drag( config.pos, model.pos, model.size, model.el )
-  
 }  
 
 pictureCut( document.getElementById( 'image' ) )

@@ -1,0 +1,36 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+#list{
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 0 15px;
+
+
+  & > li{
+    display: inline-block;
+    margin-left: 15px;
+
+    a{
+      text-decoration: none;
+      color: #0000ee;
+
+      img{
+        box-sizing: border-box;
+      }
+
+      h3{
+        font-size: 22px;
+        margin: 0;
+        line-height: 28px;
+      }
+    }
+
+    a:hover{
+      color: #f00;
+
+    }  
+  }
+}

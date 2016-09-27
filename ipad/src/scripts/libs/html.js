@@ -1,4 +1,4 @@
- export function html(){
+ export var HTML = function(){
       var html = function( html ){
         this.html = html;
       };

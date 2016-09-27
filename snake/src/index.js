@@ -1,5 +1,5 @@
-  import {mapping} from './scripts/libs/mapping';
-  import {backEaseInOut} from './scripts/libs/backEaseInOut';
+  import {mapping} from './scripts/libs/mapping.js';
+  import {backEaseInOut} from './scripts/libs/backEaseInOut.js';
   var row = 15;
   var col = 25;
   var size = 32;

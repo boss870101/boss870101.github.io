@@ -1,6 +1,8 @@
-window.onload = function(){
-  var model = require( './scripts/models/mode.json' );
-  var direction = require( './scripts/libs/direction' );
+import { domRadey } from "./scripts/libs/domRadey.js";
+import { direction } from "./scripts/libs/direction.js";
+import model from "./scripts/models/mode.json";
+
+domRadey(function(){
   var config = {
     "slideWidth": 600,
     "slideHeight": 400,
@@ -89,4 +91,4 @@ window.onload = function(){
       }, 800 );
     }
   }, false );
-}  
+});

@@ -1,4 +1,4 @@
-var writingModel = require( './scripts/models/writings.json' );
+import writingModel from "./scripts/models/writingsModel.json";
 var opus = document.querySelector( '#opus' );
 
 opus.innerHTML = writingModel.map( function( item ){

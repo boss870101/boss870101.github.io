@@ -1,4 +1,4 @@
-var direction = module.exports = function(){
+export var direction = function(){
   var atan2 = Math.atan2, PI = Math.PI;
   var directions = [ 'SW', 'W', 'NW', 'N', 'Ne', 'E', 'SE', 'S' ];
   return function( p1, p2 ){

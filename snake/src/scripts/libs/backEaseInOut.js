@@ -1,4 +1,4 @@
-export function backEaseInOut(index, offset, target, framesNum, s){
+export var backEaseInOut = function(index, offset, target, framesNum, s){
       if(s == undefined)
         s = 1.70158;
       if((index /= framesNum / 2) < 1)

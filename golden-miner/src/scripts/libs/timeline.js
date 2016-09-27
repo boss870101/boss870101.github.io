@@ -1,4 +1,4 @@
-var timeline = module.exports = function( time, callback ){
+export var timeline = function( time, callback ){
   var startTime = Date.now();
   var started,ended,restarts,stop,pauseOnOff,reverses,roundtrips;
   var pauseTime,offSetTime = 0;
