@@ -6,37 +6,27 @@
 
     // Polyfills
 
-    if ( Number.EPSILON === undefined ) {
-
+    if ( Number.EPSILON === undefined )
       Number.EPSILON = Math.pow( 2, - 52 );
 
-    }
-
-    //
-
-    if ( Math.sign === undefined ) {
-
+    if ( Math.sign === undefined ){
       // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sign
 
-      Math.sign = function ( x ) {
+      Math.sign = function( x ){
 
         return ( x < 0 ) ? - 1 : ( x > 0 ) ? 1 : + x;
 
       };
-
     }
 
     if ( Function.prototype.name === undefined ) {
-
       // Missing in IE9-11.
       // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name
-
       Object.defineProperty( Function.prototype, 'name', {
 
         get: function () {
-
+          
           return this.toString().match( /^\s*function\s*(\S*)\s*\(/ )[ 1 ];
-
         }
 
       } );
