@@ -25,7 +25,7 @@
   width: 600px;
   height: 300px;
   border-radius: 20px;
-  background-image: url(images/2.jpg);
+  background-image: url(http://ucren.com/static/jason/snake/images/2.jpg);
   position: absolute;
 }
 
@@ -38,7 +38,7 @@
 #map .start .prompt{
   width: 250px;
   height: 150px;
-  background-image: url(images/key.jpg);
+  background-image: url(http://ucren.com/static/jason/snake/images/key.jpg);
   background-size: 100% 100%;
   opacity: .3;
   border-radius: 20px;
@@ -62,7 +62,7 @@
   font-size: 100px;
   position: absolute;
   bottom: 20px;
-  background-image: url(images/2.jpg);
+  background-image: url(http://ucren.com/static/jason/snake/images/2.jpg);
   color: #FDF9F0;
   opacity: .2;
   transition: opacity .5s ease .2s;
@@ -83,7 +83,7 @@
 #map{
   margin: 0 auto;
   margin-top: 40px;
-  background-image: url(images/map.png);
+  background-image: url(http://ucren.com/static/jason/snake/images/map.png);
   position: relative;
 }
 
@@ -101,7 +101,7 @@
 #map .apple{
   width: 32px;
   height: 32px;
-  background-image: url(images/snake.png);
+  background-image: url(http://ucren.com/static/jason/snake/images/snake.png);
   background-size: 160px 128px;
   position: absolute;
 }

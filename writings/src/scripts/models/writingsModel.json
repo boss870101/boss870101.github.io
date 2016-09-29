@@ -2,26 +2,26 @@
   {
     "title": "贪吃蛇",
     "url": "http://www.ijsuc.com/snake/dist/index.html",
-    "pic": "images/snake.png"
+    "pic": "http://ucren.com/staitc/jason/writings/images/snake.png"
   },
   {
     "title": "黄金矿工",
     "url": "http://www.ijsuc.com/golden-miner/dist/index.html",
-    "pic": "images/golden-miner.png"
+    "pic": "http://ucren.com/staitc/jason/writings/images/golden-miner.png"
   },
   {
     "title": "图片剪切",
     "url": "http://www.ijsuc.com/picture-cut/dist/index.html",
-    "pic": "images/picture-cut.png"
+    "pic": "http://ucren.com/staitc/jason/writings/images/picture-cut.png"
   },
   {
     "title": "ipad桌面",
     "url": "http://www.ijsuc.com/ipad/dist/index.html",
-    "pic": "images/ipad.png"
+    "pic": "http://ucren.com/staitc/jason/writings/images/ipad.png"
   },
   {
     "title": "旋转木马",
     "url": "http://www.ijsuc.com/merry-go-round/dist/index.html",
-    "pic": "images/merry-go-round.png"
+    "pic": "http://ucren.com/staitc/jason/writings/images/merry-go-round.png"
   }
 ]
