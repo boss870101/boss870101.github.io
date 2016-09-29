@@ -10,7 +10,7 @@ function pictureCut( image ){
   var model = {
     pos: [ 0, 0 ],
     size: [ 300, 300 ],
-    pic: 'images/pic.jpg'
+    pic: 'http://ucren.com/static/jsaon/picture-cut/images/pic.jpg'
   }
 
   var config = {

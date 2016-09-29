@@ -1,52 +1,52 @@
 {
   "desktops": [ [ 
-    { "title": "微信", "pic": "http://ucren.com/staitc/jason/ipad/images/weixin.png" },
-    { "title": "高德地图", "pic": "http://ucren.com/staitc/jason/ipad/images/gaode.png" },
-    { "title": "冰雪奇缘", "pic": "http://ucren.com/staitc/jason/ipad/images/bingxueqiyan.png" },
-    { "title": "设置", "pic": "http://ucren.com/staitc/jason/ipad/images/settings.png" },
-    { "title": "大众点评", "pic": "http://ucren.com/staitc/jason/ipad/images/dazhongdianping.png" },
-    { "title": "豆瓣", "pic": "http://ucren.com/staitc/jason/ipad/images/douban.png" },
-    { "title": "淘宝", "pic": "http://ucren.com/staitc/jason/ipad/images/taobao.png" },
-    { "title": "UC浏览器", "pic": "http://ucren.com/staitc/jason/ipad/images/uc.png" },
-    { "title": "有道词典", "pic": "http://ucren.com/staitc/jason/ipad/images/youdao.png" },
-    { "title": "支付宝", "pic": "http://ucren.com/staitc/jason/ipad/images/zhifubao.png" },
-    { "title": "星盘", "pic": "http://ucren.com/staitc/jason/ipad/images/xingpan.png" },
-    { "title": "smule", "pic": "http://ucren.com/staitc/jason/ipad/images/smule.png" },
-    { "title": "相片", "pic": "http://ucren.com/staitc/jason/ipad/images/photos.png" },
-    { "title": "提醒事项", "pic": "http://ucren.com/staitc/jason/ipad/images/reminders.png" }
+    { "title": "微信", "pic": "http://ucren.com/static/jsaon/ipad/images/weixin.png" },
+    { "title": "高德地图", "pic": "http://ucren.com/static/jsaon/ipad/images/gaode.png" },
+    { "title": "冰雪奇缘", "pic": "http://ucren.com/static/jsaon/ipad/images/bingxueqiyan.png" },
+    { "title": "设置", "pic": "http://ucren.com/static/jsaon/ipad/images/settings.png" },
+    { "title": "大众点评", "pic": "http://ucren.com/static/jsaon/ipad/images/dazhongdianping.png" },
+    { "title": "豆瓣", "pic": "http://ucren.com/static/jsaon/ipad/images/douban.png" },
+    { "title": "淘宝", "pic": "http://ucren.com/static/jsaon/ipad/images/taobao.png" },
+    { "title": "UC浏览器", "pic": "http://ucren.com/static/jsaon/ipad/images/uc.png" },
+    { "title": "有道词典", "pic": "http://ucren.com/static/jsaon/ipad/images/youdao.png" },
+    { "title": "支付宝", "pic": "http://ucren.com/static/jsaon/ipad/images/zhifubao.png" },
+    { "title": "星盘", "pic": "http://ucren.com/static/jsaon/ipad/images/xingpan.png" },
+    { "title": "smule", "pic": "http://ucren.com/static/jsaon/ipad/images/smule.png" },
+    { "title": "相片", "pic": "http://ucren.com/static/jsaon/ipad/images/photos.png" },
+    { "title": "提醒事项", "pic": "http://ucren.com/static/jsaon/ipad/images/reminders.png" }
   ],
   [ 
-    { "title": "微信", "pic": "http://ucren.com/staitc/jason/ipad/images/weixin.png" },
-    { "title": "QQ", "pic": "http://ucren.com/staitc/jason/ipad/images/qq.png" },
-    { "title": "冰雪奇缘", "pic": "http://ucren.com/staitc/jason/ipad/images/bingxueqiyan.png" },
-    { "title": "设置", "pic": "http://ucren.com/staitc/jason/ipad/images/settings.png" },
-    { "title": "大众点评", "pic": "http://ucren.com/staitc/jason/ipad/images/dazhongdianping.png" },
-    { "title": "豆瓣", "pic": "http://ucren.com/staitc/jason/ipad/images/douban.png" }
+    { "title": "微信", "pic": "http://ucren.com/static/jsaon/ipad/images/weixin.png" },
+    { "title": "QQ", "pic": "http://ucren.com/static/jsaon/ipad/images/qq.png" },
+    { "title": "冰雪奇缘", "pic": "http://ucren.com/static/jsaon/ipad/images/bingxueqiyan.png" },
+    { "title": "设置", "pic": "http://ucren.com/static/jsaon/ipad/images/settings.png" },
+    { "title": "大众点评", "pic": "http://ucren.com/static/jsaon/ipad/images/dazhongdianping.png" },
+    { "title": "豆瓣", "pic": "http://ucren.com/static/jsaon/ipad/images/douban.png" }
   ],[
-    { "title": "淘宝", "pic": "http://ucren.com/staitc/jason/ipad/images/taobao.png" },
-    { "title": "UC浏览器", "pic": "http://ucren.com/staitc/jason/ipad/images/uc.png" },
-    { "title": "有道词典", "pic": "http://ucren.com/staitc/jason/ipad/images/youdao.png" },
-    { "title": "支付宝", "pic": "http://ucren.com/staitc/jason/ipad/images/zhifubao.png" },
-    { "title": "星盘", "pic": "http://ucren.com/staitc/jason/ipad/images/xingpan.png" },
-    { "title": "smule", "pic": "http://ucren.com/staitc/jason/ipad/images/smule.png" },
-    { "title": "相片", "pic": "http://ucren.com/staitc/jason/ipad/images/photos.png" },
-    { "title": "提醒事项", "pic": "http://ucren.com/staitc/jason/ipad/images/reminders.png" },
-    { "title": "网易新闻", "pic": "http://ucren.com/staitc/jason/ipad/images/wangyinew.png" },
-    { "title": "网易音乐", "pic": "http://ucren.com/staitc/jason/ipad/images/wangyiyun.png" },
-    { "title": "查找", "pic": "http://ucren.com/staitc/jason/ipad/images/find.png" }
+    { "title": "淘宝", "pic": "http://ucren.com/static/jsaon/ipad/images/taobao.png" },
+    { "title": "UC浏览器", "pic": "http://ucren.com/static/jsaon/ipad/images/uc.png" },
+    { "title": "有道词典", "pic": "http://ucren.com/static/jsaon/ipad/images/youdao.png" },
+    { "title": "支付宝", "pic": "http://ucren.com/static/jsaon/ipad/images/zhifubao.png" },
+    { "title": "星盘", "pic": "http://ucren.com/static/jsaon/ipad/images/xingpan.png" },
+    { "title": "smule", "pic": "http://ucren.com/static/jsaon/ipad/images/smule.png" },
+    { "title": "相片", "pic": "http://ucren.com/static/jsaon/ipad/images/photos.png" },
+    { "title": "提醒事项", "pic": "http://ucren.com/static/jsaon/ipad/images/reminders.png" },
+    { "title": "网易新闻", "pic": "http://ucren.com/static/jsaon/ipad/images/wangyinew.png" },
+    { "title": "网易音乐", "pic": "http://ucren.com/static/jsaon/ipad/images/wangyiyun.png" },
+    { "title": "查找", "pic": "http://ucren.com/static/jsaon/ipad/images/find.png" }
   ],[
-    { "title": "ICloud", "pic": "http://ucren.com/staitc/jason/ipad/images/icloud.png" },
-    { "title": "爱奇艺", "pic": "http://ucren.com/staitc/jason/ipad/images/iqiyi.png" },
-    { "title": "邮箱", "pic": "http://ucren.com/staitc/jason/ipad/images/mail.png" },
-    { "title": "美颜相机", "pic": "http://ucren.com/staitc/jason/ipad/images/meiyanxiangji.png" },
-    { "title": "备忘录", "pic": "http://ucren.com/staitc/jason/ipad/images/notes.png" },
-    { "title": "新浪", "pic": "http://ucren.com/staitc/jason/ipad/images/sina.png" }
+    { "title": "ICloud", "pic": "http://ucren.com/static/jsaon/ipad/images/icloud.png" },
+    { "title": "爱奇艺", "pic": "http://ucren.com/static/jsaon/ipad/images/iqiyi.png" },
+    { "title": "邮箱", "pic": "http://ucren.com/static/jsaon/ipad/images/mail.png" },
+    { "title": "美颜相机", "pic": "http://ucren.com/static/jsaon/ipad/images/meiyanxiangji.png" },
+    { "title": "备忘录", "pic": "http://ucren.com/static/jsaon/ipad/images/notes.png" },
+    { "title": "新浪", "pic": "http://ucren.com/static/jsaon/ipad/images/sina.png" }
   ] ],
   "dock": [ 
-    { "title": "电话", "pic": "http://ucren.com/staitc/jason/ipad/images/call.png" },
-    { "title": "通信录", "pic": "http://ucren.com/staitc/jason/ipad/images/contacts.png" },
-    { "title": "UC浏览器", "pic": "http://ucren.com/staitc/jason/ipad/images/uc.png" },
-    { "title": "QQ", "pic": "http://ucren.com/staitc/jason/ipad/images/qq.png" },
-    { "title": "多米音乐", "pic": "http://ucren.com/staitc/jason/ipad/images/duomi.png" }
+    { "title": "电话", "pic": "http://ucren.com/static/jsaon/ipad/images/call.png" },
+    { "title": "通信录", "pic": "http://ucren.com/static/jsaon/ipad/images/contacts.png" },
+    { "title": "UC浏览器", "pic": "http://ucren.com/static/jsaon/ipad/images/uc.png" },
+    { "title": "QQ", "pic": "http://ucren.com/static/jsaon/ipad/images/qq.png" },
+    { "title": "多米音乐", "pic": "http://ucren.com/static/jsaon/ipad/images/duomi.png" }
   ]
 }
