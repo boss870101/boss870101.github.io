@@ -119,4 +119,18 @@ var SCREEN_WIDTH = window.innerWidth,
 
     renderer.render( scene, camera );
 
-  }   
+  }  
+  
+  var canvas = document.querySelector( 'canvas' );
+  canvas.style.position = 'absolute';
+  canvas.style.top = 0;
+  canvas.style.pointerEvents = 'none';
+
+
+
+
+
+
+
+
+
