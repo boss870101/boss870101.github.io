@@ -1,5 +1,5 @@
 #container{
-  background-image: url(http://ucren.com/static/jason/golden-miner/images/map-3.png);
+  background-image: url(images/map-3.png);
   position: relative;
   margin: 60px auto 0 auto;
   overflow: hidden;
@@ -10,7 +10,7 @@
 #container .goal{
   width: 100%;
   height: 100%;
-  background: url(http://ucren.com/static/jason/golden-miner/images/target.png) no-repeat;
+  background: url(images/target.png) no-repeat;
   background-size: 100%;
   z-index: 6;
   position: absolute;
@@ -19,7 +19,7 @@
 #container .container1{
   width: 100%;
   height: 100%;
-  background-image: url(http://ucren.com/static/jason/golden-miner/images/start.png); 
+  background-image: url(images/start.png); 
   background-size: 100%;
   z-index: 6;
   position: relative;
@@ -29,7 +29,7 @@
 #container .messages{
   width: 100%;
   height: 17%;
-  background: url(http://ucren.com/static/jason/golden-miner/images/message.png) repeat-x;
+  background: url(images/message.png) repeat-x;
   font-size: 150%;
   float: left;
 }
@@ -59,12 +59,12 @@
 }
 
 #container .people{
-  background: url(http://ucren.com/static/jason/golden-miner/images/people.png) no-repeat;
+  background: url(images/people.png) no-repeat;
   background-size: 100%;
 }
 
 #container .people1{
-  background: url(http://ucren.com/static/jason/golden-miner/images/people-1.png) no-repeat;
+  background: url(images/people-1.png) no-repeat;
   background-size: 100%;
 }
 

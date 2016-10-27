@@ -5,7 +5,7 @@ list.innerHTML = writingModel.map( function( item ){
   return [
     '<li>',
       '<a href=' + item.url + '>',
-        '<img src=' + item.pic + '>',
+        '<img src=' + item.pic + ' width="190" height="190">',
         '<h3>' + item.title + '</h3></a>',
     '</li>'  
   ].join('');

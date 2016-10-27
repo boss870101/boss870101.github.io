@@ -4,15 +4,15 @@ import model from "./scripts/models/mode.json";
 
 domRadey(function(){
   var config = {
-    "slideWidth": 600,
-    "slideHeight": 400,
+    "sliderWidth": 600,
+    "sliderHeight": 400,
     "scale": 50,
     "imgWidth": 600,
     "rotate": 60,
     "verticalAlign": { "top": 0, "bottom": 1, "middle": 2 }
   }
 
-  var slide = document.getElementById( 'slide' );
+  var slider = document.getElementById( 'slider' );
   var container = document.getElementById( 'container' );
   var offsetIndex = model.length % 2 ? 0 : -1;
 
@@ -20,18 +20,18 @@ domRadey(function(){
     model.forEach( function( item, index, arr ){
       var moietyLength = Math.floor( arr.length / 2 );
       var abs = Math.abs;
-      if( !item[ 'el' ] ){
+      if( !item.el ){
         item.el = document.createElement( 'div' );
         item.index = index - moietyLength;
         item.el.className = 'item';
         item.el.style.backgroundImage = 'url(' + item.pic + ')';
-        slide.appendChild( item.el );
+        slider.appendChild( item.el );
       }
       var style = item.el.style;
 
       style.zIndex = ( item.index > 0 ? -item.index : item.index );
       style.width = config.imgWidth + 'px';
-      style.height = config.slideHeight - abs( item.index ) * config.scale + 'px';
+      style.height = config.sliderHeight - abs( item.index ) * config.scale + 'px';
       style.left = item.index * config.scale + 'px'; 
       style.top = abs( item.index ) * config.scale / config.verticalAlign.middle  + 'px';
       style.opacity = 5 / ( abs( item.index ) + 5 );

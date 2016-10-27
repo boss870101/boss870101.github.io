@@ -5,7 +5,7 @@ html{
 body {
   margin: 0;
   padding: 0;
-  background-image: url(http://cdn.ucren.com/static/jason/home-page/images/1.jpeg);
+  background-image: url(images/1.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
@@ -16,7 +16,8 @@ header{
   width: 100%;
   height: 65px;
   background-color: #d6dde3;
-
+  position: relative;
+  z-index: 10010;
 
   .logo{
     float: left;
@@ -77,6 +78,8 @@ header{
 }
 
 .photo{
+  position: relative;
+  z-index: 10010;
   width: 600px;
   text-align: center;
   height: 400px;
@@ -98,6 +101,7 @@ header{
 
   p{
     line-height: 35px;
+    text-shadow: 0 0 30px #8dfcd2;
     opacity: 0;
   }
 
