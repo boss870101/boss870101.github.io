@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="个人博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://ijsuc.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>mock.js 学习总结 | 个人博客</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/blog/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header">
+  <img src="/blog/" class="banner-img">
+</header> 
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/works/dist"><i class="fa "></i>demo</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-12 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="mock.js 学习总结">
+            
+	            mock.js 学习总结
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/mockjs" title='mockjs'>
+                        mockjs
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/02/07</span>
+        </span>
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>468</strong>天之前发表，文中内容可能已经过时。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h1><p>在前端开发中经常遇到这样的事情，接口没写好，只能写静态页面，如何用简单的方法模拟后端数据呢？<br>mockjs 就是做这个的，而且好用。</p>
+<p>下面是我做为初学者的一些总结经验，期望和小伙伴们一起交流进步。</p>
+<h2 id="安装（-须要安装-node-js"><a href="#安装（-须要安装-node-js" class="headerlink" title="安装（ 须要安装 node.js )"></a>安装（ 须要安装 <a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a> )</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">node:</span><br><span class="line">  npm install mockjs</span><br><span class="line">bower:</span><br><span class="line">  npm install -g bower</span><br><span class="line">  bower install --save mockjs</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="mockjs-体验"><a href="#mockjs-体验" class="headerlink" title="mockjs 体验"></a>mockjs 体验</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//模拟自定义对象</span></span><br><span class="line"><span class="keyword">let</span> data = Mock.mock(&#123;</span><br><span class="line">  <span class="string">"number|1-100"</span>:<span class="number">1</span>, <span class="comment">//1-100 中的随机整数 </span></span><br><span class="line">  <span class="string">"boolean"</span>:<span class="string">"@boolean"</span>, <span class="comment">// 随机生成 true 或 false</span></span><br><span class="line">  <span class="string">"string|1-10"</span>: <span class="string">'a'</span> <span class="comment">//随机生成 1-10 个字符串 a</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">2</span>) );</span><br><span class="line"></span><br><span class="line"><span class="comment">//模拟ajax请求</span></span><br><span class="line"><span class="keyword">let</span> data1 = Mock.mock( URL,&#123;</span><br><span class="line">  <span class="string">"name"</span>:<span class="string">"@name"</span>,</span><br><span class="line">  <span class="string">"isTrue|1"</span>:<span class="literal">true</span>,</span><br><span class="line">  <span class="string">"color"</span>:<span class="string">"@color"</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">  url: URL,</span><br><span class="line">  success:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(data1,<span class="literal">null</span>,<span class="number">2</span>));</span><br></pre></td></tr></table></figure>
+<h2 id="语法总结"><a href="#语法总结" class="headerlink" title="语法总结"></a>语法总结</h2><p>Mock.js 的语法规范包括两部分：</p>
+<ol>
+<li>数据模板定义规范（Data Template Definition，DTD）</li>
+</ol>
+<ul>
+<li>数据模板中的每个属性由 3 部分构成：属性名、生成规则、属性值：</li>
+<li>属性名 和 生成规则 之间用竖线 | 分隔。</li>
+<li>生成规则 是可选的。</li>
+<li>生成规则 有 7 种格式：<ol>
+<li>‘name|min-max’: value</li>
+<li>‘name|count’: value</li>
+<li>‘name|min-max.dmin-dmax’: value</li>
+<li>‘name|min-max.dcount’: value</li>
+<li>‘name|count.dmin-dmax’: value</li>
+<li>‘name|count.dcount’: value</li>
+<li>‘name|+step’: value</li>
+</ol>
+</li>
+<li>生成规则 的 含义 需要依赖 属性值的类型 才能确定。</li>
+<li>属性值 中可以含有 @占位符。</li>
+<li>属性值 还指定了最终值的初始值和类型。</li>
+</ul>
+<p>属性值可生成 String、Number、Boolean、Object、Array、Function、RegExp</p>
+<ol start="2">
+<li>数据占位符定义规范（Data Placeholder Definition，DPD）</li>
+</ol>
+<p>占位符 只是在属性值字符串中占个位置，并不出现在最终的属性值中。</p>
+<p>占位符 的格式为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@占位符</span><br><span class="line">@占位符(参数 [, 参数])</span><br></pre></td></tr></table></figure>
+<ul>
+<li>用 @ 来标识其后的字符串是 占位符。</li>
+<li>占位符 引用的是 Mock.Random 中的方法。</li>
+<li>通过 Mock.Random.extend() 来扩展自定义占位符。</li>
+<li>占位符 也可以引用 数据模板 中的属性。</li>
+<li>占位符 会优先引用 数据模板 中的属性。</li>
+<li>占位符 支持 相对路径 和 绝对路径。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Mock.mock(&#123;</span><br><span class="line">  name: &#123;</span><br><span class="line">    first: <span class="string">'@FIRST'</span>,</span><br><span class="line">    middle: <span class="string">'@FIRST'</span>,</span><br><span class="line">    last: <span class="string">'@LAST'</span>,</span><br><span class="line">    full: <span class="string">'@first @middle @last'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// =&gt;</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"name"</span>: &#123;</span><br><span class="line">    <span class="string">"first"</span>: <span class="string">"Charles"</span>,</span><br><span class="line">    <span class="string">"middle"</span>: <span class="string">"Brenda"</span>,</span><br><span class="line">    <span class="string">"last"</span>: <span class="string">"Lopez"</span>,</span><br><span class="line">    <span class="string">"full"</span>: <span class="string">"Charles Brenda Lopez"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>mockjs官网：<a href="http://mockjs.com" target="_blank" rel="noopener">http://mockjs.com/</a>，官网是最好的学习资料。</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/blog/2017/03/13/redux 笔记/" class="pre-post btn btn-default" title='React-Redux 笔记'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">React-Redux 笔记</span>
+        </a>
+    
+    
+        <a href="/blog/2016/12/10/中国象棋/" class="next-post btn btn-default" title='中国象棋'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">中国象棋</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	<!--PC和WAP自适应版-->
+<div id="SOHUCS"></div>
+<script type="text/javascript">
+	(function(){var appid='cyt8KmUC1';var conf='prod_855a68d3b3d91855360a6215672a505a';var width=window.innerWidth||document.documentElement.clientWidth;if(width<960){window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id='+appid+'&conf='+conf+'"><\/script>');}else{var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}
+	c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})});}})();
+</script>	
+
+    </div>
+
+
+
+
+
+                </main>
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2017
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+	<script src="/blog/js/search.js?rev=@@hash"></script>
+
+
+<script src="/blog/js/app.js?rev=@@hash"></script>
+<script src="/blog/js/three.js?rev=@@hash"></script>
+<script src="/blog/js/boid.js?rev=@@hash"></script>
+<script src="/blog/js/brid.js?rev=@@hash"></script>
+<script src="/blog/js/canvasRenderer.js?rev=@@hash"></script>
+<script src="/blog/js/render.js?rev=@@hash"></script>
+<script src="/blog/js/config.js?rev=@@hash"></script>
+
+
+</body>
+</html>

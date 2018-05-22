@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="个人博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://ijsuc.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>React 扩展组件之间的shardState | 个人博客</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/blog/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header">
+  <img src="/blog/" class="banner-img">
+</header> 
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/works/dist"><i class="fa "></i>demo</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-12 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="React 扩展组件之间的shardState">
+            
+	            React 扩展组件之间的shardState
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2016/11/01</span>
+        </span>
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>567</strong>天之前发表，文中内容可能已经过时。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>React 的<code>state</code>属性当该属性<code>setState()</code>对<code>state</code>属性进行修改，该组件就会自动更新修改，它在单个组件上确实很好用。要是实现省市区三级联动如果我们把他分成三个组件来写，它们之间的<code>state</code>属性通信就很麻烦了，藕合性也不好。那么我们就用MVC的思路来写个类<code>Component</code>来继承<code>React.Component</code>给他添加个公共仓库让每个组件都能获取修改这个仓库的信息。<br>为这个类<code>Component</code>添加了几个方法和一个属性：</p>
+<p>1.<code>initStaredState()</code>    //添加共享初史化数据<br>2.<code>importStaredState()</code>  //引入需要共享数据的组件<br>3.<code>updateStaredState()</code>  //更新共享数据</p>
+<p>属性<code>sharedState</code> 用来修改共享数据</p>
+<p>下面是实现这个类的代码：</p>
+<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> clone = <span class="function">(<span class="params"> (</span>)=&gt;</span>&#123; <span class="comment">/* ... */</span> &#125; )();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> equal = <span class="function">(<span class="params"> (</span>) =&gt;</span>&#123; <span class="comment">/* ... */</span> &#125; )();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>; </span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Component</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>( props )&#123;</span><br><span class="line">    <span class="keyword">super</span>( props );</span><br><span class="line">  &#125;</span><br><span class="line">　</span><br><span class="line">  importSharedState( ...names )&#123; <span class="comment">/* ... */</span> &#125;</span><br><span class="line">  </span><br><span class="line">  updateSharedState( ...names )&#123; <span class="comment">/* ... */</span> &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">static</span> initSharedState( store )&#123; <span class="comment">/* ... */</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码函数<code>clone</code>是深度克隆对象，<code>equal</code>是比较两个对象是是否完全一样，<br><code>Component</code>的<code>updateStaredState()</code>方法旧数据和新数据做比较是否有改变，改变更新数据并做复本;<br>祥细代码已传到github上<a href="https://github.com/boss870101/boss870101.github.io/tree/master/js" target="_blank" rel="noopener">Component.js</a></p>
+<p>下面代码是该组件的用法代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> Component <span class="keyword">from</span> <span class="string">"./scripts/libs/Component"</span>; </span><br><span class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">"react-dom"</span>;</span><br><span class="line"></span><br><span class="line">Component.initSharedState( &#123;</span><br><span class="line">  list: [ </span><br><span class="line">    &#123; <span class="attr">value</span>: <span class="string">"学习　React"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">value</span>: <span class="string">"学习　React-dom"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">value</span>: <span class="string">"学习　React.Component"</span> &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line">render(</span><br><span class="line">  &lt;Todo /&gt;,</span><br><span class="line">  <span class="built_in">document</span>.querySelector( <span class="string">'#root'</span> )    </span><br><span class="line">)</span><br><span class="line">      </span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Todo</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>( props ) &#123;</span><br><span class="line">    <span class="keyword">super</span>( props );</span><br><span class="line">  &#125;  </span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;TodoInput /&gt;</span><br><span class="line">        &lt;TodoList /&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">export default class TodoInput extends Component&#123;</span></span><br><span class="line"><span class="regexp">  constructor( props )&#123;</span></span><br><span class="line"><span class="regexp">    super(props);</span></span><br><span class="line"><span class="regexp">    this.importSharedState( "list" ); /</span><span class="regexp">/引入要共享的对象</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">  </span></span><br><span class="line"><span class="regexp">  onKeyDown( event )&#123;</span></span><br><span class="line"><span class="regexp">    if( event.keyCode !== 13 )</span></span><br><span class="line"><span class="regexp">      return;  </span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">    const value = event.target.value;</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">    if( !value.trim() )　/</span><span class="regexp">/过滤没输入内容</span></span><br><span class="line"><span class="regexp">      return;</span></span><br><span class="line"><span class="regexp">          </span></span><br><span class="line"><span class="regexp">    this.sharedState.list.push( &#123; value &#125; )　/</span><span class="regexp">/修改共享对象</span></span><br><span class="line"><span class="regexp">    this.updateSharedState( 'list' );　/</span><span class="regexp">/更新共享的对象</span></span><br><span class="line"><span class="regexp">    event.target.value = '';　/</span><span class="regexp">/输入框清空</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">  render()&#123;</span></span><br><span class="line"><span class="regexp">    return (</span></span><br><span class="line"><span class="regexp">      &lt;div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;input type="text" placeholder="输入后按回车键" onKeyDown=&#123; this.onKeyDown.bind( this ) &#125; /</span>&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;   </span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">export default class TodoList extends Component&#123;</span></span><br><span class="line"><span class="regexp">  constructor( props )&#123;</span></span><br><span class="line"><span class="regexp">    super(props);</span></span><br><span class="line"><span class="regexp">    this.importSharedState( 'list' );　/</span><span class="regexp">/引入共享数据</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">  removeItem( index )&#123;</span></span><br><span class="line"><span class="regexp">    this.sharedState.list.splice( index, 1 );　/</span><span class="regexp">/修改数据</span></span><br><span class="line"><span class="regexp">    this.updateSharedState( 'list' );　/</span><span class="regexp">/更新数据</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">  render()&#123;</span></span><br><span class="line"><span class="regexp">    return (</span></span><br><span class="line"><span class="regexp">      &lt;ul&gt;</span></span><br><span class="line"><span class="regexp">        &#123; this.sharedState.list.map( ( item, index )=&gt; </span></span><br><span class="line"><span class="regexp">        &lt;li key=&#123; index &#125;&gt;&#123; item.value &#125;</span></span><br><span class="line"><span class="regexp">          &lt;span onClick=&#123; this.removeItem.bind( this, index ) &#125;&gt;&amp;times;&lt;/</span>span&gt;</span><br><span class="line">        &lt;<span class="regexp">/li&gt; ) &#125;</span></span><br><span class="line"><span class="regexp">      &lt;/u</span>l&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码效果请点这里<a href="http://ijsuc.com/test-todo/dist/">简化版Todo</a></p>
+<p>代码效果请点这里<a hrer="http://ijsuc.com/works/todo/dist/">完整版Todo</a></p>
+<p>欢迎各位大神都都来指点一二，谢谢！！！</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/blog/2016/11/02/reds对象/" class="pre-post btn btn-default" title='refs对象(React)'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">refs对象(React)</span>
+        </a>
+    
+    
+        <a href="/blog/2016/10/17/React 路由匹配/" class="next-post btn btn-default" title='React 路由匹配'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">React 路由匹配</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	<!--PC和WAP自适应版-->
+<div id="SOHUCS"></div>
+<script type="text/javascript">
+	(function(){var appid='cyt8KmUC1';var conf='prod_855a68d3b3d91855360a6215672a505a';var width=window.innerWidth||document.documentElement.clientWidth;if(width<960){window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id='+appid+'&conf='+conf+'"><\/script>');}else{var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}
+	c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})});}})();
+</script>	
+
+    </div>
+
+
+
+
+
+                </main>
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2017
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+	<script src="/blog/js/search.js?rev=@@hash"></script>
+
+
+<script src="/blog/js/app.js?rev=@@hash"></script>
+<script src="/blog/js/three.js?rev=@@hash"></script>
+<script src="/blog/js/boid.js?rev=@@hash"></script>
+<script src="/blog/js/brid.js?rev=@@hash"></script>
+<script src="/blog/js/canvasRenderer.js?rev=@@hash"></script>
+<script src="/blog/js/render.js?rev=@@hash"></script>
+<script src="/blog/js/config.js?rev=@@hash"></script>
+
+
+</body>
+</html>

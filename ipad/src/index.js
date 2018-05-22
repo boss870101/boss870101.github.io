@@ -146,7 +146,6 @@ let css = {
     container.parentNode.onmousewheel = () => true;
     setTimeout( () => element.parentNode.classList.add( 'hidden' ), 180 );
 
-    console.log( element.parentNode )
     element.parentNode.style.zIndex = 2;
     element.classList.add( 'hidden' );
     dockContainer.style.zIndex = 2;

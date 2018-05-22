@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# version 4
+
+CACHE:
+./index.html
+./images/icon.png
+./bundle.js
+./index.css
+./phone.css
+./images/i.png

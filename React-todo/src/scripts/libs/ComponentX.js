@@ -42,6 +42,7 @@
  *   }
  * }
  */
+import React from "react";
 
 const clone = ( () => {
   const s = /num|str|boo|und/, f = /fun/, m = /date|rege/i;

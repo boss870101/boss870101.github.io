@@ -1,0 +1,89 @@
+<template>
+  <div 
+    :class="className" 
+    :src="src" 
+    :level="level" 
+    :background="background" 
+    :foreground="foreground">
+    <canvas :height="size" :width="size" ref="qrcode-vue"></canvas>
+  </div>
+</template>
+<script>
+  import qrCode from "./lib/";
+
+  function getBackingStorePixelRatio(ctx) {
+    return (
+      ctx.webkitBackingStorePixelRatio ||
+      ctx.mozBackingStorePixelRatio ||
+      ctx.msBackingStorePixelRatio ||
+      ctx.oBackingStorePixelRatio ||
+      ctx.backingStorePixelRatio ||
+      1
+    )
+  }
+  export default {
+    name: 'jason-qrcode',
+    props: {
+      src: {
+        type: String,
+        required: true,
+        default: ''
+      },
+      className: {
+        type: String,
+        default: ''
+      },
+      size: {
+        type: Number | String,
+        default: 100,
+        validator: s => isNaN(Number(s)) !== true
+      },
+      level: {
+        type: String,
+        default: 'L',
+        validator: l => ['L', 'Q', 'M', 'H'].indexOf(l) > -1
+      },
+      background: {
+        type: String,
+        default: '#fff'
+      },
+      foreground: {
+        type: String,
+        default: '#000'
+      }
+    },
+    methods: {
+      render() {
+        const {src, size, level, background, foreground} = this
+        const _size = size >>> 0 // size to number
+        // We'll use type===-1 to force QRCode to automatically pick the best type
+        const QRCode = qrCode( src, {
+          typeNumber: -1,
+          errorCorrectLevel: level
+        } )
+        const canvas = this.$refs['qrcode-vue']
+        const ctx = canvas.getContext('2d')
+        const cells = QRCode.modules
+        const tileW = _size / cells.length
+        const tileH = _size / cells.length
+        const scale = (window.devicePixelRatio || 1) / getBackingStorePixelRatio(ctx)
+        canvas.height = canvas.width = _size * scale
+        ctx.scale(scale, scale)
+        cells.forEach(function (row, rdx) {
+          row.forEach(function (cell, cdx) {
+            ctx.fillStyle = cell ? foreground : background
+            const w = (Math.ceil((cdx + 1) * tileW) - Math.floor(cdx * tileW))
+            const h = (Math.ceil((rdx + 1) * tileH) - Math.floor(rdx * tileH))
+            ctx.fillRect(Math.round(cdx * tileW), Math.round(rdx * tileH), w, h)
+          })
+        })
+      }
+    },
+    updated() {
+      this.render()
+    },
+    mounted() {
+      this.render()
+    }
+  }
+</script>

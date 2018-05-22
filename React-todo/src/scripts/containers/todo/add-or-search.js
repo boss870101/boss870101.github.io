@@ -1,3 +1,4 @@
+import React from "react";
 import ComponentX from "../../libs/ComponentX.js";
 
 export class AddOrSearch extends ComponentX{
@@ -39,8 +40,6 @@ export class AddOrSearch extends ComponentX{
   onSearch( event ){
     var value = event.target.value;
 
-    console.log( 'value', value );
-
     this.sharedState.searchText = value;
     this.updateSharedState( 'searchText' );
   }
@@ -60,10 +59,12 @@ export class AddOrSearch extends ComponentX{
       <div className="controls">
         <div className="btns">
           <div className={ `add-task btn ${ showAdd ? 'active' : '' }` } onClick={ this.addClick.bind( this ) }>
-            <i className="fa fa-plus"></i>
+            <i className="fa fa-plus row"></i>
+            <i className="fa fa-plus col"></i>
           </div>
           <div className={ `search-task btn ${ showSearch ? 'active' : '' }` } onClick={ this.searchClick.bind( this ) }>
-            <i className="fa fa-search"></i>
+            <i className="fa fa-search radius"></i>
+            <i className="fa fa-search bias"></i>
           </div>
           <div className="my-account">
             <div>
@@ -82,11 +83,16 @@ export class AddOrSearch extends ComponentX{
                 onChange={ this.addChange.bind( this ) } 
                 onKeyDown={ this.onKeyDown.bind( this ) }
               />
-              <button className="add-task-btn" onClick={ this.onAdd.bind( this ) } ><i className="fa fa-plus"></i></button>
+              <button className="add-task-btn" onClick={ this.onAdd.bind( this ) } >
+                <i className="fa fa-plus row"></i>
+                <i className="fa fa-plus col"></i>
+              </button>
           </div>
           <div className={ `search-task ${ showSearch ? 'active' : '' }` }>
             <input type="search" placeholder="Search for a task ..." value={ this.sharedState.searchText } onChange={ this.onSearch.bind( this ) } />
-            <button><i className="fa fa-search"></i></button>
+            <button>
+              <i className="fa fa-search radius"></i>
+            </button>
           </div>
         </div>
       </div>   

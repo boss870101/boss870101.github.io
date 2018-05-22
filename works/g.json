@@ -5,6 +5,9 @@
   // specify path of output.
   "distBase": "./dist/",
 
+  // server port
+  "port": 8080,
+
   // open url on browser
   "demoUrlPath": "/dist/",
 
@@ -17,7 +20,7 @@
      */
     
     {
-      "watch": "**/*.@(json|js|tpl)",
+      "watch": "**/*.@(json|js|tpl|scss)",
       "src": "index.js",
       "dist": "bundle.js",
       "compiler": "webpack"
@@ -28,8 +31,7 @@
      */
     
     {
-      "watch": "**/*.scss",
-      "src": "*.scss",
+      "src": "**/*.scss",
       "dist": "{basename}.css", // variable can be 'dirname', 'parentname', 'basename' and 'extname'.
       "compiler": "sass"
     },
@@ -42,20 +44,17 @@
      */
     
     {
-      "watch": "**/@(*.html|*.css|*.json)",
-      "src": "@(*.html|*.css|*.json)",
+      "src": "**/@(*.html|*.css|*.json|*.manifest)",
       "dist": "{basename}{extname}"
     },
 
     {
-      "watch": "**/css/@(*.css)",
-      "src": "css/@(*.css)",
+      "src": "**/css/@(*.css)",
       "dist": "css/{basename}{extname}"
     },
 
     {
-      "watch": "**/@(images)/@(*.*)",
-      "src": "@(images)/@(*.*)",
+      "src": "**/@(images)/@(*.*)",
       "dist": "{parentname}/{basename}{extname}"
     }
   ]

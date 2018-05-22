@@ -1,1 +1,759 @@
-<!DOCTYPE html> <html> <head> <title>首页</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <link rel="stylesheet" type="text/css" href="/home-page/dist/reset.css"> <link rel="stylesheet" type="text/css" href="/home-page/dist/index.css"> <base target="_blank"> </head> <body> <header> <div class="logo"> <img src="/home-page/dist/images/web.png" width="65" height="65" alt=""> <div> <p>jason</p> <p>个人简历</p> </div> </div> <ul> <li><a href="/" title="">首页</a></li> <li><a href="/works/dist/" title="">作品集</a></li> <li><a href="/resume/dist/" title="">简历</a></li> </ul> </header> <div class="photo"> <img src="/home-page/dist/images/i.png" width="150" height="150" alt="jason"> <p>成功不是将来才有的，而是从决定去做的那一刻起，持续累积而成。</p> <p class="line"></p> <p>我叫黄少杰</p> <p>29岁</p> <p>447563595@qq.com</p> </div> </body> <script src="/js/jquery-3.0.0.min.js"></script> <script src="/home-page/dist/bundle.js"></script> <script src="/js/three.js"></script> <script src="/js/boid.js"></script> <script src="/js/brid.js"></script> <script src="/js/projector.js"></script> <script src="/js/canvasRenderer.js"></script> <script src="/js/render.js"></script> </html>
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="个人博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://ijsuc.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>个人博客</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/blog/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header">
+  <img src="/blog/" class="banner-img">
+</header> 
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/works/dist"><i class="fa "></i>demo</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-12 main-content ">
+                    <!-- <div class="carousel">
+    <img src="/blog/img/head-img.jpg">
+</div>
+ -->
+
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/blog/2017/03/13/redux 笔记/">React-Redux 笔记</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2017年03月13日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                
+Redux 本身足够简单，除了 React，它还能够支持其他界面框架。所以如果要将 Redux 和 React 结合起来使用，就还需要一些额外的工具，其中最重要的莫过于 react-redux 了。
+
+react-redux 提供了两个重要对象Provider和connect()&amp;lt;Provider store&amp;gt;&amp;lt;Provider store&amp;gt;使组件层级中的 connect() 方法都能够获得 Redux store, 正常情况下, 根组件应该嵌夽在 &amp;lt;Privider&amp;gt;中才能使用connect()方法。
+connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])连接 React 组件与 Redux store.连接操作不会改变原来的组件类。反而返回一个新的已与 Redux store 连接的组件类。…
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/blog/2017/03/13/redux 笔记/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/blog/2017/02/07/mock/">mock.js 学习总结</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2017年02月07日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                基本介绍在前端开发中经常遇到这样的事情，接口没写好，只能写静态页面，如何用简单的方法模拟后端数据呢？mockjs 就是做这个的，而且好用。
+下面是我做为初学者的一些总结经验，期望和小伙伴们一起交流进步。
+安装（ 须要安装 node.js )12345node:  npm install mockjsbower:  npm install -g bower  bower install --save mockjs…
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/mockjs" title='mockjs'>
+                        mockjs
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/blog/2017/02/07/mock/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/blog/2016/12/10/中国象棋/">中国象棋</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2016年12月10日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                前几天用原生 js 写了个中国象棋，今天才有空把我实现在代码和思路分享给大家。象棋读小学的时候就会玩，所以对象棋的一些规则比较清楚，写起代码也比较容易。
+象棋的模型数据棋盘有 10 行 9 列拼成的，坐标原点定在棋盘的左上点，X 轴每列从 0 - 8，Y 轴每行 0 - 9 。把所有棋子相同的规则先抽取出来。…
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/blog/2016/12/10/中国象棋/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/blog/2016/11/23/深度排序的封装/">深度排序的封装</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2016年11月23日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                封装了个 json 数据排序，该数据是这样的：
+1234567let array = [  &amp;#123; name: &#39;小明&#39;, gender: &#39;male&#39;, chinese: 99, mathematics: 99, english: 22 &amp;#125;,  &amp;#123; name: &#39;小蓝&#39;, gender: &#39;male&#39;, chinese: 88, mathematics: 55, english: 82 &amp;#125;,  &amp;#123; name: &#39;小红&#39;, gender: &#39;woman&#39;, chinese: 88, mathematics: 66, englis: 44 &amp;#125;,  &amp;#123; name: &#39;小青&#39;, gender: &#39;woman&#39;, chinese: 99, mathematics: 55, englis: 33 &amp;#125;,  &amp;#123; name: &#39;小小&#39;, gender: &#39;woman&#39;, chinese: 99, mathematics: 55, english: 92 &amp;#125;];…
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/blog/2016/11/23/深度排序的封装/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/blog/2016/11/21/window 对象的属性/">浏览器 window 对象</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2016年11月21日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                今天收集了下关于浏览器中的 window 对象的一些相关信息。
+window 对象的属性
+window，name 属性
+window.window属性指向是自身。
+window.name属性用于设置当前浏览器窗口的名字。…
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/blog/2016/11/21/window 对象的属性/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/blog/2016/11/19/封装 fetchJSONP /">封装 fetchJSONP 方法</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2016年11月19日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                今天研究了下怎么获取有道翻译 API, 并封装了个fetchJSONP方法来使用。
+获取有道翻译 API在地址有道翻译 API申请 key，申请通过后会有 XML, JSON, JSONP 三种数据格式接口可以用，由于我这里是用浏览器直接发送请求的，用 XML, JSON 会有跨域问题。所以只能用JSONP格式接口。…
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/blog/2016/11/19/封装 fetchJSONP /" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/blog/2016/11/17/100方块游戏/">100 方块游戏</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2016年11月17日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                游戏来源最近在 App Store 看到一款 1010！游戏玩起来还挺有意思的，就决定自己也写下这个游戏。我给这个游戏取名为 100 方块游戏。
+玩法说明
+在三个待选区可拖动方块到 10×10 容器内，添满行或列可消除填满的方块。
+得分每一个方块的小方块个数　×　1 分，消除一行或一列 10 分。
+
+该游戏链接 100 方块游戏 兼容移动端，ISO 设备可填加到屏幕桌面当应用使用，而且没广告哦。…
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/blog/2016/11/17/100方块游戏/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/blog/2016/11/09/iphone添加到主屏幕/">web 页面伪装APP应用</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2016年11月09日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                想要实现在 iPhone 下打开的Safari浏览器添加到主屏幕的web页面。
+怎么判断是什么设备打开页呢navigator.userAgent属性返回：浏览器类型、版本、操作系统类型、浏览器引擎类型等信息，在这个属性上我们就知道他是在iphone下打开的。
+1const isIOS = /iPhone/gi.test( navigator.userAgent );…
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/blog/2016/11/09/iphone添加到主屏幕/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/blog/2016/11/06/服务器运行黙认路径设置(nodejs)/">服务器运行黙认路径设置(nodejs)</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2016年11月06日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                serve-staticserve-static( root, options )创建一个新的中间件功能从在一个给定的服务文件根目录。该文件为将取决于结合点播服务。url提供的根目录。当文件没有找到,而不是发送404响应,这个模块将调用next()继续下一个中间件,允许叠加和备用。…
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/blog/2016/11/06/服务器运行黙认路径设置(nodejs)/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/blog/2016/11/05/nodejs搭建服务器/">nodejs 搭建服务器笔记</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2016年11月05日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                服务器搭建1.创建个nodejs文件夹打开文件夹创建server.js文件在sublime text打开编写代码：
+123456789101112131415const http = require(&#39;http&#39;); //引入&#39;htt...
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/blog/2016/11/05/nodejs搭建服务器/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+
+
+    <nav class="pagination" role="navigation">
+        <div id="page-nav">
+            <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="extend next" rel="next" href="/blog/page/2/"><i class='fa fa-angle-right'></i></a>
+        </div>
+    </nav>
+
+
+
+                </main>
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2017
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+	<script src="/blog/js/search.js?rev=@@hash"></script>
+
+
+<script src="/blog/js/app.js?rev=@@hash"></script>
+<script src="/blog/js/three.js?rev=@@hash"></script>
+<script src="/blog/js/boid.js?rev=@@hash"></script>
+<script src="/blog/js/brid.js?rev=@@hash"></script>
+<script src="/blog/js/canvasRenderer.js?rev=@@hash"></script>
+<script src="/blog/js/render.js?rev=@@hash"></script>
+<script src="/blog/js/config.js?rev=@@hash"></script>
+
+
+</body>
+</html>

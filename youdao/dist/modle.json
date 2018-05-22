@@ -1,0 +1,21 @@
+{
+    "errorCode":0,
+    "query":"good",
+    "translation":["好"], // 有道翻译
+    "basic":{ // 有道词典-基本词典
+        "phonetic":"gʊd",
+        "uk-phonetic":"gʊd", //英式发音
+        "us-phonetic":"ɡʊd", //美式发音
+        "explains":[
+            "好处",
+            "好的"
+            "好"
+        ]
+    },
+    "web":[ // 有道词典-网络释义
+        {
+            "key":"good",
+            "value":["良好","善","美好"]
+        },
+    ]
+}

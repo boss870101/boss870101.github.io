@@ -1,0 +1,8 @@
+{
+  "hook1": { "width": 23, "height": 30, "url": "url(images/hook-1.png)", "className": "hook1", "top": 0 },
+  "hook3": { "width": 23, "height": 30, "url": "url(images/hook-3.png)", "className": "hook3", "top": 0 },
+  "goldL": { "width": 68, "height": 64, "url": "url(images/goldL.png)", "className": "goldL", "top": 14 },
+  "goldM": { "width": 38, "height": 34, "url": "url(images/goldM.png)", "className": "goldM", "top": 14 },
+  "ironoreL": { "width": 56, "height": 50, "url": "url(images/ironoreL.png)", "className": "ironoreL", "top": 14 },
+  "ironoreS": { "width": 37, "height": 30, "url": "url(images/ironoreS.png)", "className": "ironoreS", "top": 14 }
+}

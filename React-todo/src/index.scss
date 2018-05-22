@@ -43,7 +43,7 @@ table {
 }
 
 body{
-  background: url(http://www.vauls.com/img/3.jpg) #608566;
+  background-color: #608566;
   font-family: "Open Sans", Arial, sans-serif;
   color: #66747C;
   font-size: 14px;
@@ -71,19 +71,23 @@ body{
 .window-title .dots{
 }
 .window-title .dots i{
-  margin-right: 3px;
-  font-size: 14px;
+  font-size: 0;
+  margin-right: 8px;
+  padding: 6px; 
+  border-radius: 50%;
 }
 .window-title .dots i:nth-child(1){
+  background-color: #fc615d;
   color: #F57E7D;
 }
 .window-title .dots i:nth-child(2){
+  background-color: #fdbc40;
   color: #FFC881;
 }
 .window-title .dots i:nth-child(3){
+  background-color: #35cb4b;
   color: #82CF85;
-}
-.window-title .title{
+}.window-title .title{
   font-size: 12px;
   font-weight: bold;
   text-align: center;
@@ -107,6 +111,41 @@ button{
 button.add-task-btn{
   width:30px;
 }
+
+button.add-task-btn .fa.fa-plus.row,
+button.add-task-btn .fa.fa-plus.col{
+  display: block;
+  width: 14px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #c4c2c2;
+  position: absolute;
+}
+button.add-task-btn .fa.fa-plus.col{
+  transform: rotate( 90deg );
+}
+// button.add-task-btn:hover .fa.fa-plus.row,
+// button.add-task-btn:hover .fa.fa-plus.col{
+//   background-color: red;
+// }
+
+button .fa.fa-search.radius{
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 3px solid #c4c2c2;
+  border-radius: 50%;
+}
+button .fa.fa-search.radius:before{
+  border: 2px solid #c4c2c2;
+  width: 6px;
+  display: block;
+  content: '';
+  transform: rotate( 45deg );
+  margin: 10px 0 0 7px;
+  border-radius: 2px;
+}
+
 input[type="text"], input[type="search"]{
   height:30px;
   padding:0;
@@ -168,21 +207,70 @@ input[type="checkbox"]{
 }
 label{
   display:block;
-  width:17px;
-  height:16px;
-  overflow:hidden;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #868686;
   cursor:pointer;
   float: left;
+  border-radius: 2px;
+  margin-right: 3px;
 }
-.task .fa-times{
+
+.done-true label{
+  border: 2px solid #dedede;
+}
+
+
+
+.done-true label:before,
+.done-true label:after{
+  content: '';
+  display: block;
+  border: 2px solid #dedede;
+  width: 3px;
+  border-radius: 3px;
+}
+
+.done-true label:before{
+  transform: rotate( 45deg );
+  margin-top: 4px;
+}
+
+.done-true label:after{
+  border: 2px solid #dedede;
+  width: 10px;
+  transform: rotate( -50deg );
+  margin-left: 2px;
+  margin-top: -5px;
+}
+
+.fa-times{
   float: right;
-  font-size: 18px;
-  color: #D1D1D1;
+  border: 2px solid #868686;
+  width: 8px;
+  border-radius: 1px;
+  transform: rotate( 45deg );
   cursor: pointer;
+  margin-top: 6px;
 }
-.task .fa-times:hover{
-  color: #8A8A8A;
+
+.fa-times:before{
+  content: '';
+  position: absolute;
+  border: 2px solid #868686;
+  width: 8px;
+  border-radius: 1px;
+  transform: rotate( 90deg );
+  cursor:pointer;
+  margin-top: -2px;
+  margin-left: -2px;
 }
+
+.done-true .fa-times,
+.done-true .fa-times:before{
+  border:2px solid #dedede;
+}
+
 .task .description{
   line-height: 20px;
   display: inline-block;
@@ -229,20 +317,69 @@ label{
 .btns > .btn.active:first-child{
   border-left: 1px solid #6E8599;
 }
+.btns > .btn.active:first-child{
+  border-left: 1px solid #6E8599;
+}
 .btns > .add-task{
-  padding: 8px 10px 4px;
+  padding: 0 9px 0 11px;
+  height: 100%;
 }
+
+
+.btns > .add-task .fa.fa-plus.row,
+.btns > .add-task .fa.fa-plus.col{ 
+  display: block;
+  position: absolute;
+  background-color: #79889d;
+  width: 22px;
+  height: 6px;
+  border-radius: 2px;
+  margin-top: 16px;
+}
+
+.btns > .add-task .fa.fa-plus.col{
+  transform: rotate( 90deg );
+}
+
 .btns > .search-task{
-  padding: 5px 10px 7px;
+  padding: 0px 10px 0px;
+  height: 100%;
 }
+
+.btns > .search-task .fa.fa-search.radius{
+  border: 4px solid #79889d;
+  display: block;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin-top: 6px;
+  border-radius: 50%;
+}
+.btns > .search-task .fa.fa-search.bias{
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 4px;
+  border-radius: 3px;
+  transform: rotate( 45deg );
+  background-color: #79889d;
+  margin-top: 25px;
+  margin-left: 16px;
+}
+
 .btns > .btn > i{
   font-size: 28px;
   cursor: pointer;
   text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
 }
-.btns > .btn.active > i{
-  color: #fff;
+.btns > .add-task.btn.active > .fa.fa-plus,
+.btns > .search-task.btn.active > .fa.fa-search.bias{
+  background-color: #fff;
 }
+.btns > .search-task.btn.active > .fa.fa-search.radius{
+  border:4px solid #fff;
+}
+
 .overlay{
   background: #6E8599;
   padding: 10px;

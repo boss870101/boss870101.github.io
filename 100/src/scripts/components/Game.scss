@@ -1,0 +1,143 @@
+html,body{
+  background-color: #262626;
+}
+.game{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.score{
+  position: absolute;
+  color: #fff;
+  font-size: 30px;
+}
+
+.grid-item{
+  position: absolute;
+}
+
+.game-container{
+  position: absolute;
+}
+
+.grids{
+  position: absolute;
+  .grids-block{
+    position: absolute;
+
+    .small.block{
+      position: absolute;
+
+      .block{
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border-radius: 3px;
+      }
+      .x0{
+        left: 0px;
+      }
+      .x1{
+        left: 16px;
+      }
+      .x2{
+        left: 32px;
+      }
+      .x3{
+        left: 48px;
+      }
+      .x4{
+        left: 64px;
+      }
+      .y0{
+        top: 0px;
+      }
+      .y1{
+        top: 16px;
+      }
+
+      .y2{
+        top: 32px;
+      }
+
+      .y3{
+        top: 48px;
+      }
+
+      .y4{
+        top: 64px;
+      }
+    }  
+  }
+}
+
+
+
+
+.grids{
+  position: absolute;
+  .grids-block{
+    position: absolute;
+
+    .normal.block{
+      position: absolute;
+      .block{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border-radius: 6px;
+      }
+      .x0{
+        left: 0px;
+      }
+      .x1{
+        left: 32px;
+      }
+      .x2{
+        left: 64px;
+      }
+      .x3{
+        left: 96px;
+      }
+      .x4{
+        left: 128px;
+      }
+      .y0{
+        top: 0px;
+      }
+      .y1{
+        top: 32px;
+      }
+
+      .y2{
+        top: 64px;
+      }
+
+      .y3{
+        top: 96px;
+      }
+
+      .y4{
+        top: 128px;
+      }
+    }  
+  }  
+}
+
+.game-over{
+  position: absolute;
+
+  span{
+    font-size: 30px;
+    color: #FD0A19;
+  }
+
+  input{
+    font-size: 30px;
+    background-color: #262626;
+    color: #3058FD;
+  }
+}

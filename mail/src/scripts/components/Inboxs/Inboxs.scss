@@ -1,0 +1,231 @@
+@mixin abs{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.inboxs{
+  @include abs;
+  background-color: #fff;
+  transition: all .3s ease-out;
+  overflow-x: hidden;
+  z-index: 10;
+
+  .header,
+  .compile-header{
+    @include abs;
+    position: fixed;
+    height: 40px;
+    background-color: #E9EAF1;
+    z-index: 1000;
+
+
+    div:nth-child(1),
+    div:nth-child(2),
+    div:nth-child(3){
+      @include abs;
+      text-align: center;
+      font-size: 16px;
+      line-height: 40px;
+      cursor: pointer;
+    }
+
+    div:nth-child(1){
+      width: 64px;
+
+      img{
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+      }
+    }
+
+    &.check-all{
+      width: 96px;
+    }
+
+    div:nth-child(2){
+      left: 64px;
+      right: 64px;
+    }
+
+    div:nth-child(3){
+      left: auto;
+      width: 64px;
+    }  
+  } 
+
+  .compile-header{
+    display: none;
+  }   
+
+  .search{
+    @include abs;
+    top: 40px;
+    transition: all .3s ease;
+
+    div:nth-child(1),
+    div:nth-child(2){
+      @include abs;
+      height: 30px;
+      margin: 8px;
+    }
+
+    div:nth-child(1){
+      right: 80px;
+
+      input[type="search"]{
+        background-color: #E6E8F0;
+        height: 30px;
+        width: 100%;
+        border-radius: 6px;
+        border: 0;
+      }
+    }
+
+    div:nth-child(2){
+      width: 80px;
+      left: auto;
+      background-color: #f9f9f9;
+      text-align: center;
+      line-height: 30px;
+    }
+  }
+
+  .list{
+    position: relative;
+    top: 90px;
+    transition: all .3s ease;
+
+    .item{
+      position: relative;
+      height: 60px;
+      margin-top: 5px;
+
+      input{
+        position: absolute;
+        top: -5px;
+        left: -15px;
+        transition: all .2s ease;
+        z-index: 1000;
+      }
+
+      img{
+        @include abs;
+        display: block;
+        left: 15px;
+        width: 22px;
+        height: 22px; 
+        margin-top: 9px;
+        transition: all .3s ease;
+      }
+
+      .container{
+        @include abs;
+        left: 37px;
+        transition: all .3s ease;
+
+        div{
+          @include abs;
+          left: 15px;
+          line-height: 100%;
+          border-bottom: 1px solid #D9DBDB;
+
+          h6{
+            font-weight: 900;
+            font-size: 16px;
+            line-height: 20px;
+          }
+
+          i{
+            @include abs;
+            line-height: 20px;
+            display: block;
+            font-size: 10px;
+            width: 70px;
+            left: auto;
+            font-weight: 400;
+            font-style: normal;
+          }
+
+          p{
+            margin: 0 20px 0 0;
+            font-weight: 400;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+
+    }
+  }
+
+  .delete{
+    @include abs;
+    height: 60px;
+    top: auto;
+    line-height: 60px;
+    font-size: 26px;
+    text-align: center;
+    display: fixed;
+    color: red;
+    background-color: rgba(242, 242, 242, .4);
+    cursor: pointer;
+    display: none;
+  }
+}
+
+.inboxs.animate1{
+
+  .header{
+    display: none;
+  }
+
+  .compile-header{
+    display: block
+
+  }
+
+  .search{
+    top: 0px;
+  }
+
+  .list{
+    top: 40px;
+  }
+
+  .delete{
+    display: block;
+  }
+
+}
+
+.inboxs.animate2{
+
+  .list{
+
+    .item{
+
+      input{
+        left: 5px;
+        width: 100%;
+        height: 100%;
+      }
+
+      img{
+        left: 30px;
+      }
+
+      .container{
+        left: 52px;
+      }
+    }
+  }
+}
+
+
+
+

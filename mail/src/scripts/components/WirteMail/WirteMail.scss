@@ -1,0 +1,214 @@
+@mixin abs{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.wirte-mail-container{
+  @include abs;
+  background-color: rgba(249, 249, 249, 1);
+  transition: transform .3s ease-out;
+  z-index: 10;
+
+  .header{
+    @include abs;
+    position: fixed;
+    height: 40px;
+    background-color: #E9EAF1;
+
+    div:nth-child(1),
+    div:nth-child(2),
+    div:nth-child(3){
+      @include abs;
+      text-align: center;
+      font-size: 16px;
+      line-height: 40px;
+    }
+
+    div:nth-child(1){
+      width: 64px;
+    }
+
+    div:nth-child(2){
+      left: 64px;
+      right: 64px;
+    }
+
+    div:nth-child(3){
+      left: auto;
+      width: 64px;
+    }
+  }
+
+  .wirte-container{
+    margin: 45px 0 0 15px;
+
+    .fill-in-information{
+      li{
+        line-height: 30px;
+        border-bottom: 1px solid #D9DBDB;
+        position: relative;
+
+        div{
+          @include abs;
+          height: 30px;
+
+          input{
+            width: 100%;
+            line-height: 20px;
+            font-size: 16px;
+            outline: none;
+            background-color: transparent;
+            border: 0;
+          }
+
+        }
+      }
+
+      li:nth-child(1),
+      li:nth-child(2){
+        span{
+          width: 64px;
+        }
+
+        div{
+          left: 64px;
+          right: 15px;
+        }
+      }
+
+      li:nth-child(3){
+        span{
+          width: 48px;
+        } 
+
+        div{
+          left: 48px;
+          right: 15px;
+        }
+      }
+
+      li:nth-child(4){
+        margin-top: 8px;
+        height: 30px;
+        border-bottom: none;
+
+        div{
+          right: 15px;
+
+          input{
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    } 
+
+    .tooltip{
+      @include abs;
+      left: 15px;
+      right: 15px;
+      top: auto;
+      height: 0px;
+      transition: height .3s ease-out;
+
+      li{
+        line-height: 0px;
+        text-align: center;
+        background-color: #fff;
+        display: none;
+      }
+
+      li:nth-child(1){
+        border-radius: 10px 10px 0 0;
+      }
+
+      li:nth-child(2){
+        border-radius: 0 0 10px 10px;
+        border-top: 1px solid #F1F0F6;
+      }
+
+      li:nth-child(3){
+        border-radius: 10px;
+      }
+    } 
+
+    .error-box{
+      @include abs;
+      left: 15px;
+      right: 15px;
+      top: auto;
+      height: 0px;
+      bottom: auto;
+      display: none;
+
+      li{
+        line-height: 60px;
+        text-align: center;
+        background-color: #fff;
+        cursor: pointer;
+      }
+
+      li:nth-child(1){
+        border-radius: 10px 10px 0 0;
+        line-height: 40px;
+      }
+
+      li:nth-child(2){
+        line-height: 40px;
+        vertical-align: top;
+      }
+
+      li:nth-child(3){
+        border-radius: 0 0 10px 10px;
+        border-top: 1px solid #F1F0F6;
+      }
+    }
+  }
+}
+
+.wirte-mail-container.save,
+.wirte-mail-container.send{
+
+  .shade{
+    @include abs;
+    background-color: rgba(242, 242, 242, .4);
+    z-index: 1
+  }
+
+  .tooltip.save,
+  .topltip.send{
+    @include abs;
+    left: 15px;
+    right: 15px;
+    top: auto;
+    height: 200px;
+    z-index: 2;
+
+    li{
+      line-height: 60px;
+      text-align: center;
+      background-color: #fff;
+      display: block;
+      cursor: pointer;
+    }
+
+    li:nth-child(1){
+      border-radius: 10px 10px 0 0;
+      color: #FF2E27;
+    }
+
+    li:nth-child(2){
+      border-radius: 0 0 10px 10px;
+      border-top: 1px solid #F1F0F6;
+    }
+
+    li:nth-child(3){
+      margin-top: 10px;
+      border-radius: 10px;
+    }
+  } 
+
+}  

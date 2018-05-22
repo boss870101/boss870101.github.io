@@ -1,3 +1,4 @@
+import React from "react";
 import ComponentX from "../../libs/ComponentX.js";
 
 const escapeRegexp = function(s){

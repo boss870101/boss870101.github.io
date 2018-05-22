@@ -1,3 +1,4 @@
+import React from "react";
 import ComponentX from "../../libs/ComponentX.js";
 import TodoItem from "./todo-item.js"; 
   
@@ -13,7 +14,7 @@ export class TodoList extends ComponentX{
         <ul>
           { this.sharedState.list.map( ( el, index ) => {
             if( ~el.value.toLowerCase().indexOf( this.sharedState.searchText.toLowerCase() ) ){
-              return <TodoItem index={ index } item={ el } />
+              return <TodoItem key={ index } index={ index } item={ el } />
             }
           } ) }
         </ul>

@@ -1,0 +1,271 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="个人博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://ijsuc.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>中国象棋 | 个人博客</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/blog/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header">
+  <img src="/blog/" class="banner-img">
+</header> 
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/works/dist"><i class="fa "></i>demo</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-12 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="中国象棋">
+            
+	            中国象棋
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2016/12/10</span>
+        </span>
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>528</strong>天之前发表，文中内容可能已经过时。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>前几天用原生 js 写了个中国象棋，今天才有空把我实现在代码和思路分享给大家。象棋读小学的时候就会玩，所以对象棋的一些规则比较清楚，写起代码也比较容易。</p>
+<h2 id="象棋的模型数据"><a href="#象棋的模型数据" class="headerlink" title="象棋的模型数据"></a>象棋的模型数据</h2><p>棋盘有 10 行 9 列拼成的，坐标原点定在棋盘的左上点，X 轴每列从 0 - 8，Y 轴每行 0 - 9 。<br>把所有棋子相同的规则先抽取出来。</p>
+<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//限制在棋盘内</span></span><br><span class="line"><span class="keyword">const</span> isInChessboard = <span class="function">(<span class="params"> x, y </span>) =&gt;</span> x &gt;= <span class="number">0</span> &amp;&amp; x &lt; <span class="number">9</span> &amp;&amp; y &gt;= <span class="number">0</span> &amp;&amp; y &lt; <span class="number">10</span>;</span><br><span class="line"><span class="comment">//帅将和士限制在九宫格内</span></span><br><span class="line"><span class="keyword">const</span> isInSudoku = <span class="function">(<span class="params"> x, y </span>) =&gt;</span> x &gt; <span class="number">2</span> &amp;&amp; x &lt; <span class="number">6</span> &amp;&amp; ( ( y &gt;= <span class="number">0</span> &amp;&amp; y &lt; <span class="number">3</span> ) || ( y &lt;= <span class="number">9</span> &amp;&amp; y &gt; <span class="number">6</span> ) );</span><br><span class="line"></span><br><span class="line"><span class="comment">//上下左右四个方向</span></span><br><span class="line"><span class="keyword">const</span> allDir = [ &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">-1</span> &#125;,&#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">0</span> &#125;,&#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">1</span> &#125;,&#123; <span class="attr">x</span>: <span class="number">-1</span>, <span class="attr">y</span>: <span class="number">0</span> &#125;];</span><br></pre></td></tr></table></figure>
+<h3 id="车（rook）"><a href="#车（rook）" class="headerlink" title="车（rook）"></a>车（rook）</h3><p>“车”可以左右平移，前进后退,遇到相同阵营的棋子的位置就过不了，不同阵营的棋子就可以吃，那么要走这个棋子的时候就要把它能走所有位置给它。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> [ &#123;</span><br><span class="line">  type: <span class="string">'rook'</span>,</span><br><span class="line">  labelRed: <span class="string">'車'</span>,</span><br><span class="line">  labelBlack: <span class="string">'車'</span>, </span><br><span class="line">    </span><br><span class="line">  <span class="comment">//棋子的规则，接收要走的棋子和所有棋子的位置反回要走的棋子可以走到所有位置</span></span><br><span class="line">  rule( piece, map )&#123;</span><br><span class="line">    <span class="keyword">const</span> result = [], allDirsEnable = [ <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span> ];</span><br><span class="line">    <span class="keyword">let</span> obstaclePiece, step = <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>( <span class="literal">true</span> )&#123;</span><br><span class="line">      <span class="comment">//四个方向都不能走的就退出了	</span></span><br><span class="line">      <span class="keyword">if</span>( allDirsEnable.every( <span class="function">(<span class="params"> number </span>) =&gt;</span> number === <span class="number">0</span> ) )</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">          </span><br><span class="line">      <span class="comment">//四个方向顺时针的一步一步向外找可以走的步</span></span><br><span class="line">      <span class="keyword">for</span>( <span class="keyword">let</span> i = <span class="number">0</span>; i &lt; allDir.length; i++ )&#123;</span><br><span class="line">        <span class="keyword">let</span> dir = allDir[ i ];</span><br><span class="line">        <span class="keyword">let</span> x = piece.x + dir.x * step , y = piece.y + dir.y * step;</span><br><span class="line">	     <span class="comment">//已到棋盘外的步的方向跳过</span></span><br><span class="line">        <span class="keyword">if</span>( !isInChessboard( x, y ) )&#123;</span><br><span class="line">          allDirsEnable[ i ] = <span class="number">0</span>;</span><br><span class="line">          <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">          </span><br><span class="line">        <span class="keyword">if</span>( obstaclePiece = map.get( <span class="string">`<span class="subst">$&#123;y&#125;</span>,<span class="subst">$&#123;x&#125;</span>`</span> ) )&#123;</span><br><span class="line">          <span class="keyword">if</span>( obstaclePiece.base !== piece.base )&#123;</span><br><span class="line">            result.push( &#123; x, y &#125; );</span><br><span class="line">            allDirsEnable[ i ] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">          &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            allDirsEnable[ i ] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>( allDirsEnable[ i ] )</span><br><span class="line">          result.push( &#123; x, y &#125; );</span><br><span class="line">      &#125;   </span><br><span class="line">      step++;  </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;,</span><br><span class="line">    </span><br><span class="line">  <span class="comment">//棋子初始位置</span></span><br><span class="line">  defaultPosition: [ </span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span>, <span class="attr">base</span>: <span class="string">'black'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">8</span>, <span class="attr">y</span>: <span class="number">0</span>, <span class="attr">base</span>: <span class="string">'black'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">9</span>, <span class="attr">base</span>: <span class="string">'red'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">8</span>, <span class="attr">y</span>: <span class="number">9</span>, <span class="attr">base</span>: <span class="string">'red'</span> &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;,<span class="comment">/***/</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="马（horse）"><a href="#马（horse）" class="headerlink" title="马（horse）"></a>马（horse）</h3><p>“马”有八个可以走的位置，数据加上了八个马走的位置，后就是检查四个方向看哪个方向有“憋马腿”和棋盘外的就跳过。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  type: <span class="string">'horse'</span>,</span><br><span class="line">  labelRed: <span class="string">'馬'</span>,</span><br><span class="line">  labelBlack: <span class="string">'馬'</span>,</span><br><span class="line">  </span><br><span class="line">  rule( piece, map )&#123;</span><br><span class="line">    <span class="keyword">const</span> result = [];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>( <span class="keyword">let</span> i = <span class="number">0</span>;  i &lt; allDir.length; i++ )&#123;</span><br><span class="line">      <span class="keyword">let</span> dir = allDir[ i ];</span><br><span class="line">      <span class="keyword">let</span> obstaclePiece;</span><br><span class="line">      <span class="keyword">let</span> x = piece.x + dir.x, y = piece.y + dir.y;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">if</span>( !map.has( <span class="string">`<span class="subst">$&#123; y &#125;</span>,<span class="subst">$&#123; x &#125;</span>`</span> ) )&#123;</span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">let</span> item <span class="keyword">of</span> <span class="keyword">this</span>.steps[ i ] )&#123;</span><br><span class="line">          <span class="keyword">let</span> x = piece.x + item.x, y = piece.y + item.y;</span><br><span class="line">          </span><br><span class="line">          <span class="keyword">if</span>( !isInChessboard( x, y ) )</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">if</span>( !( obstaclePiece = map.get( <span class="string">`<span class="subst">$&#123; y &#125;</span>,<span class="subst">$&#123; x &#125;</span>`</span> ) ) || piece.base !== obstaclePiece.base )</span><br><span class="line">            result.push( &#123; x, y &#125; );</span><br><span class="line">        &#125;  </span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;,</span><br><span class="line">    </span><br><span class="line">  defaultPosition: [ </span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">0</span>, <span class="attr">base</span>: <span class="string">'black'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">7</span>, <span class="attr">y</span>: <span class="number">0</span>, <span class="attr">base</span>: <span class="string">'black'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">9</span>, <span class="attr">base</span>: <span class="string">'red'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">7</span>, <span class="attr">y</span>: <span class="number">9</span>, <span class="attr">base</span>: <span class="string">'red'</span> &#125;</span><br><span class="line">  ],</span><br><span class="line"></span><br><span class="line">  steps: [</span><br><span class="line">    [ &#123; <span class="attr">x</span>: <span class="number">-1</span>, <span class="attr">y</span>: <span class="number">-2</span> &#125;, &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">-2</span> &#125; ],</span><br><span class="line">    [ &#123; <span class="attr">x</span>: <span class="number">2</span>, <span class="attr">y</span>: <span class="number">-1</span> &#125;, &#123; <span class="attr">x</span>: <span class="number">2</span>, <span class="attr">y</span>: <span class="number">1</span> &#125; ],</span><br><span class="line">    [ &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span> &#125;, &#123; <span class="attr">x</span>: <span class="number">-1</span>, <span class="attr">y</span>: <span class="number">2</span> &#125; ],</span><br><span class="line">    [ &#123; <span class="attr">x</span>: <span class="number">-2</span>, <span class="attr">y</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">x</span>: <span class="number">-2</span>, <span class="attr">y</span>: <span class="number">-1</span> &#125; ]</span><br><span class="line">  ]</span><br><span class="line">&#125;，</span><br></pre></td></tr></table></figure>
+<h3 id="炮（cannon）"><a href="#炮（cannon）" class="headerlink" title="炮（cannon）"></a>炮（cannon）</h3><p>“炮”走的方向和“车”一样就是吃子方式不同，必须跳过一个棋子方吃掉对方的棋子，谷称“隔山打炮”。代码须检测同方向遇到第二枚棋子是否是对方棋子，是就把这个坐标位置添加进去，并跳过这个方向的检查。如果是己方的棋子就跳过这个方向的检查。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  type: <span class="string">'cannon'</span>,</span><br><span class="line">  labelRed: <span class="string">'炮'</span>,</span><br><span class="line">  labelBlack: <span class="string">'炮'</span>,</span><br><span class="line">  </span><br><span class="line">  rule( piece, map )&#123;</span><br><span class="line">    <span class="keyword">const</span> result = [], allDirsEnable = [ <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span> ], obstacles = [ <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span> ];</span><br><span class="line">    <span class="keyword">let</span> step = <span class="number">1</span>, obstaclePiece;</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">while</span>( <span class="literal">true</span> )&#123;</span><br><span class="line">      <span class="keyword">if</span>( allDirsEnable.every( <span class="function">(<span class="params"> number </span>) =&gt;</span> number === <span class="number">0</span> ) )</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">       </span><br><span class="line">      <span class="keyword">for</span>( <span class="keyword">let</span> i = <span class="number">0</span>; i &lt; allDir.length; i++ )&#123;</span><br><span class="line">        <span class="keyword">let</span> dir = allDir[ i ];</span><br><span class="line">        <span class="keyword">let</span> x = piece.x + dir.x * step , y = piece.y + dir.y * step;</span><br><span class="line">	</span><br><span class="line">        <span class="keyword">if</span>( !isInChessboard( x, y ) )&#123;</span><br><span class="line">          allDirsEnable[ i ] = <span class="number">0</span>;</span><br><span class="line">          <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">	</span><br><span class="line">        <span class="keyword">if</span>( obstaclePiece = map.get( <span class="string">`<span class="subst">$&#123;y&#125;</span>,<span class="subst">$&#123;x&#125;</span>`</span> ) )&#123;</span><br><span class="line">          obstacles[ i ]++;</span><br><span class="line">         </span><br><span class="line">        <span class="keyword">if</span>( obstacles[ i ] === <span class="number">2</span> &amp;&amp; obstaclePiece.base !== piece.base )</span><br><span class="line">          result.push( &#123; x, y &#125; );</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>( !obstacles[ i ] )</span><br><span class="line">          result.push( &#123; x, y &#125; );</span><br><span class="line">      &#125;   </span><br><span class="line">       step++;  </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;,</span><br><span class="line">	</span><br><span class="line">  defaultPosition: [ </span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>, <span class="attr">base</span>: <span class="string">'black'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">7</span>, <span class="attr">y</span>: <span class="number">2</span>, <span class="attr">base</span>: <span class="string">'black'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">7</span>, <span class="attr">base</span>: <span class="string">'red'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">7</span>, <span class="attr">y</span>: <span class="number">7</span>, <span class="attr">base</span>: <span class="string">'red'</span> &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="象（相）（eleph）"><a href="#象（相）（eleph）" class="headerlink" title="象（相）（eleph）"></a>象（相）（eleph）</h3><p>“象（相）” 此棋不能越过河界走入对方的领地，走田字格的对角线，即俗称“象（相）”走田字。行走方位可进、可退，但是，当“象|相”行走的路线中，及田字中心有棋子时（无论己方或者是对方的棋子），则不允许走过去，俗称（塞“象（相）”眼）。代码上添加第三条和第六条 Y 轴的位置过虑掉，和有塞“象（相）”眼的步不能走。如下面代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  type: <span class="string">'eleph'</span>,</span><br><span class="line">  labelRed: <span class="string">'相'</span>,</span><br><span class="line">  labelBlack: <span class="string">'象'</span>,</span><br><span class="line">    </span><br><span class="line">  rule( piece, map )&#123;</span><br><span class="line">    <span class="keyword">const</span> result = [];</span><br><span class="line">    <span class="keyword">let</span> obstaclePiece, obstacPiece;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>( <span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.steps.length; i++ )&#123;</span><br><span class="line">      <span class="keyword">let</span> dir = <span class="keyword">this</span>.steps[ i ], obstacPosition = <span class="keyword">this</span>.obstac[ i ];</span><br><span class="line">      <span class="keyword">let</span> x = piece.x + dir.x, y = piece.y + dir.y;</span><br><span class="line">      <span class="keyword">let</span> obstacX = piece.x + obstacPosition.x, obstacY = piece.y + obstacPosition.y;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">if</span>( !isInChessboard( x, y ) || <span class="keyword">this</span>.isInDomain( y ) || ( obstacPiece = map.get( <span class="string">`<span class="subst">$&#123; obstacY &#125;</span>,<span class="subst">$&#123; obstacX &#125;</span>`</span> ) ) )<span class="keyword">continue</span>;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">if</span>( !( obstaclePiece = map.get( <span class="string">`<span class="subst">$&#123; y &#125;</span>,<span class="subst">$&#123; x &#125;</span>`</span> ) ) || obstaclePiece.base !== piece.base )</span><br><span class="line">        result.push( &#123; x, y &#125; );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;,</span><br><span class="line">	</span><br><span class="line">  defaultPosition: [ </span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">2</span>, <span class="attr">y</span>: <span class="number">0</span>, <span class="attr">base</span>: <span class="string">'black'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">6</span>, <span class="attr">y</span>: <span class="number">0</span>, <span class="attr">base</span>: <span class="string">'black'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">2</span>, <span class="attr">y</span>: <span class="number">9</span>, <span class="attr">base</span>: <span class="string">'red'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">6</span>, <span class="attr">y</span>: <span class="number">9</span>, <span class="attr">base</span>: <span class="string">'red'</span> &#125;</span><br><span class="line">  ],</span><br><span class="line">	 </span><br><span class="line">  isInDomain( y )&#123; <span class="keyword">return</span> y === <span class="number">3</span> || y === <span class="number">6</span>; &#125;,</span><br><span class="line">  </span><br><span class="line">  obstac: [ &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">-1</span> &#125;, &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">x</span>: <span class="number">-1</span>, <span class="attr">y</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">x</span>: <span class="number">-1</span>, <span class="attr">y</span>: <span class="number">-1</span> &#125; ],</span><br><span class="line">	 </span><br><span class="line">  steps: [ &#123; <span class="attr">x</span>: <span class="number">2</span>, <span class="attr">y</span>: <span class="number">-2</span> &#125;, &#123; <span class="attr">x</span>: <span class="number">2</span>, <span class="attr">y</span>: <span class="number">2</span> &#125;, &#123; <span class="attr">x</span>: <span class="number">-2</span>, <span class="attr">y</span>: <span class="number">2</span> &#125;, &#123; <span class="attr">x</span>: <span class="number">-2</span>, <span class="attr">y</span>: <span class="number">-2</span> &#125; ] </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="仕（士）（guard）"><a href="#仕（士）（guard）" class="headerlink" title="仕（士）（guard）"></a>仕（士）（guard）</h3><p>“仕（士）”只许沿着 九宫 中的斜线行走一步（方格的对角线），行走方位可进、可退，其最终目的也是为了护卫各自的最高将领（帅、将）。这个棋子代码很简单了，限制在九宫格内，不是在九宫格内就跳过了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  type: <span class="string">'guard'</span>,</span><br><span class="line">  labelRed: <span class="string">'仕'</span>,</span><br><span class="line">  labelBlack: <span class="string">'士'</span>,</span><br><span class="line">  </span><br><span class="line">  rule( piece, map )&#123;</span><br><span class="line">    <span class="keyword">const</span> result = [];</span><br><span class="line">    <span class="keyword">let</span> obstaclePiece;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>( <span class="keyword">let</span> dir <span class="keyword">of</span> <span class="keyword">this</span>.steps )&#123;</span><br><span class="line">      <span class="keyword">let</span> x = piece.x + dir.x, y = piece.y + dir.y;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">if</span>( !isInSudoku( x, y ) )</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">if</span>( !( obstaclePiece = map.get( <span class="string">`<span class="subst">$&#123; y &#125;</span>,<span class="subst">$&#123; x &#125;</span>`</span> ) ) || obstaclePiece.base !== piece.base )</span><br><span class="line">        result.push( &#123; x, y &#125; ); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;,</span><br><span class="line">	 </span><br><span class="line">  defaultPosition: [</span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">3</span>, <span class="attr">y</span>: <span class="number">0</span>, <span class="attr">base</span>: <span class="string">'black'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">5</span>, <span class="attr">y</span>: <span class="number">0</span>, <span class="attr">base</span>: <span class="string">'black'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">3</span>, <span class="attr">y</span>: <span class="number">9</span>, <span class="attr">base</span>: <span class="string">'red'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">5</span>, <span class="attr">y</span>: <span class="number">9</span>, <span class="attr">base</span>: <span class="string">'red'</span> &#125;</span><br><span class="line">  ],</span><br><span class="line">	</span><br><span class="line">  steps : [ &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">-1</span> &#125;, &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">x</span>: <span class="number">-1</span>, <span class="attr">y</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">x</span>: <span class="number">-1</span>, <span class="attr">y</span>: <span class="number">-1</span> &#125; ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="帅（将）（king）"><a href="#帅（将）（king）" class="headerlink" title="帅（将）（king）"></a>帅（将）（king）</h3><p>“帅（将）”这两枚棋子的最高统帅，只能在九宫内行走，不得走出九宫外。行走的步法为：左、右横走，上、下竖走都行，但每次只能行走一格。将和帅不准在同一直线上直接对面（中间无棋子），如一方已先占据位置，则另一方必须回避，否则就算输了。代码实现是能在九宫格行走的步数，并给它添加了两枚棋子要是在同条 X 轴 中间没有隔棋子就可以走到对方位置吃掉对方，这样两枚棋字就不可能相见了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  type: <span class="string">'king'</span>,</span><br><span class="line">  labelRed: <span class="string">'帅'</span>,</span><br><span class="line">  labelBlack: <span class="string">'將'</span>,</span><br><span class="line">	</span><br><span class="line">  rule( piece, map )&#123;</span><br><span class="line">    <span class="keyword">const</span> result = [];</span><br><span class="line">    <span class="keyword">let</span> obstaclePiece, is;</span><br><span class="line">    <span class="keyword">let</span> redKing, blackKing;</span><br><span class="line">    <span class="keyword">let</span> amongPiece = [];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>( <span class="keyword">let</span> dir <span class="keyword">of</span> allDir )&#123;</span><br><span class="line">      <span class="keyword">let</span> x = piece.x + dir.x, y = piece.y + dir.y;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">if</span>( !isInSudoku( x, y ) )</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">if</span>( !( obstaclePiece = map.get( <span class="string">`<span class="subst">$&#123; y &#125;</span>,<span class="subst">$&#123; x &#125;</span>`</span> ) ) || obstaclePiece.base !== piece.base )</span><br><span class="line">        result.push( &#123; x, y &#125; );</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>( <span class="keyword">let</span> [ key, piece ] <span class="keyword">of</span> map )&#123;</span><br><span class="line">      <span class="keyword">if</span>( piece.type === <span class="string">'king'</span> &amp;&amp; piece.base === <span class="string">'red'</span> )</span><br><span class="line">        redKing = piece;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">if</span>( piece.type === <span class="string">'king'</span> &amp;&amp; piece.base === <span class="string">'black'</span> )</span><br><span class="line">        blackKing = piece;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>( redKing.x === blackKing.x )&#123;</span><br><span class="line">      <span class="keyword">for</span>( <span class="keyword">let</span> i = blackKing.y + <span class="number">1</span>; i &lt; redKing.y; i++ )</span><br><span class="line">        amongPiece.push( map.has( <span class="string">`<span class="subst">$&#123; i &#125;</span>,<span class="subst">$&#123; redKing.x &#125;</span>`</span> ) );</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">if</span>( amongPiece.every( <span class="function"><span class="params">item</span> =&gt;</span> item === <span class="literal">false</span> ) )</span><br><span class="line">        result.push( &#123; <span class="attr">x</span>: blackKing.x, <span class="attr">y</span>: blackKing.y &#125;, &#123; <span class="attr">x</span>: redKing.x, <span class="attr">y</span>: redKing.y &#125; );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;,</span><br><span class="line">	</span><br><span class="line">  defaultPosition: [ </span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">4</span>, <span class="attr">y</span>: <span class="number">0</span>, <span class="attr">base</span>: <span class="string">'black'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">x</span>: <span class="number">4</span>, <span class="attr">y</span>: <span class="number">9</span>, <span class="attr">base</span>: <span class="string">'red'</span> &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="兵（卒）（pawn）"><a href="#兵（卒）（pawn）" class="headerlink" title="兵（卒）（pawn）"></a>兵（卒）（pawn）</h3><p>“兵（卒）” 在没有过河界前，此棋每走一步棋只许向前直走一步（不能后退）；过了河界之后，每行一步棋可以向前直走，或者横走（左、右）一步，但也是不能后退的。根据此规则，卒（兵）走到对方的底线只能左右横走，俗称：兵走老了！代码实现是，过虑掉双方后退的步数，检查过河后添加可以左右横走的位置。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  type: <span class="string">'pawn'</span>,</span><br><span class="line">  labelRed: <span class="string">'兵'</span>,</span><br><span class="line">  labelBlack: <span class="string">'卒'</span>,</span><br><span class="line">  </span><br><span class="line">  rule( piece, map )&#123;</span><br><span class="line">    <span class="keyword">const</span> result = [];</span><br><span class="line">    <span class="keyword">const</span> isCrossed = piece.base === <span class="string">'red'</span> ? piece.y &lt; <span class="number">5</span> : piece.y &gt; <span class="number">4</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>( <span class="keyword">let</span> dir <span class="keyword">of</span> allDir )&#123;</span><br><span class="line">      <span class="keyword">let</span> x = piece.x + dir.x, y = piece.y + dir.y, obstaclePiece;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">if</span>( ( dir.y === <span class="number">1</span> &amp;&amp; piece.base === <span class="string">'red'</span> ) || ( ( dir.y === <span class="number">-1</span> &amp;&amp; piece.base === <span class="string">'black'</span> ) ) )</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">if</span>( !isInChessboard( x, y ) || ( !isCrossed &amp;&amp; dir.x !== <span class="number">0</span> ) )</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">if</span>( !( obstaclePiece = map.get( <span class="string">`<span class="subst">$&#123; y &#125;</span>,<span class="subst">$&#123; x &#125;</span>`</span> ) ) || obstaclePiece.base !== piece.base )</span><br><span class="line">        result.push( &#123; x, y &#125; );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;,</span><br><span class="line">  </span><br><span class="line">  defaultPosition: <span class="function">(<span class="params"> (</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> result = [];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>( <span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i += <span class="number">2</span> )&#123;</span><br><span class="line">      result.push( &#123; <span class="attr">x</span>: i, <span class="attr">y</span>: <span class="number">3</span>, <span class="attr">base</span>: <span class="string">'black'</span> &#125; );</span><br><span class="line">      result.push( &#123; <span class="attr">x</span>: i, <span class="attr">y</span>: <span class="number">6</span>, <span class="attr">base</span>: <span class="string">'red'</span> &#125; );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125; )()</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>##渲染模型和棋子的相关操作</p>
+<p>跟据写好的数据把模型渲染出来，棋盘是网上找的一张图片，测出相关的数据代码如下:</p>
+<p>代码效果<a href="http://ijsuc.com/chess/dist/index.html">中国象棋</a>，被将军时必走能解将的棋子，无法解将，无步可走就会判定输。<br>该游戏只时现了象棋可以正常走的步和规则。</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/blog/2017/02/07/mock/" class="pre-post btn btn-default" title='mock.js 学习总结'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">mock.js 学习总结</span>
+        </a>
+    
+    
+        <a href="/blog/2016/11/23/深度排序的封装/" class="next-post btn btn-default" title='深度排序的封装'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">深度排序的封装</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	<!--PC和WAP自适应版-->
+<div id="SOHUCS"></div>
+<script type="text/javascript">
+	(function(){var appid='cyt8KmUC1';var conf='prod_855a68d3b3d91855360a6215672a505a';var width=window.innerWidth||document.documentElement.clientWidth;if(width<960){window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id='+appid+'&conf='+conf+'"><\/script>');}else{var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}
+	c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})});}})();
+</script>	
+
+    </div>
+
+
+
+
+
+                </main>
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2017
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+	<script src="/blog/js/search.js?rev=@@hash"></script>
+
+
+<script src="/blog/js/app.js?rev=@@hash"></script>
+<script src="/blog/js/three.js?rev=@@hash"></script>
+<script src="/blog/js/boid.js?rev=@@hash"></script>
+<script src="/blog/js/brid.js?rev=@@hash"></script>
+<script src="/blog/js/canvasRenderer.js?rev=@@hash"></script>
+<script src="/blog/js/render.js?rev=@@hash"></script>
+<script src="/blog/js/config.js?rev=@@hash"></script>
+
+
+</body>
+</html>

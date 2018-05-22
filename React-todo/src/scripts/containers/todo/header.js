@@ -1,3 +1,4 @@
+import React from "react";
 import ComponentX from "../../libs/ComponentX.js";
 export class Header extends ComponentX{
   constructor( props ) {
